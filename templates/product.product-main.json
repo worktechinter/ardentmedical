@@ -174,10 +174,50 @@
           "type": "field",
           "settings": {
             "field_type": "text",
-            "label": "Your Information",
+            "label": "Your First and Last Name",
             "placeholder": "Your First and Last Name*",
-            "field_name": "Full name",
+            "field_name": "Name",
             "autocomplete": "name",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false
+          }
+        },
+        "field_state": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "State",
+            "placeholder": "State*",
+            "field_name": "State",
+            "autocomplete": "address-level1",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false
+          }
+        },
+        "field_plan": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Insurance plan name",
+            "placeholder": "Insurance plan name*",
+            "field_name": "Insurance plan name",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false
+          }
+        },
+        "field_member": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Insurance member ID",
+            "placeholder": "Insurance member ID*",
+            "field_name": "Insurance member ID",
             "required": true,
             "show_label": true,
             "show_number": true,
@@ -188,143 +228,88 @@
           "type": "field",
           "settings": {
             "field_type": "tel",
-            "label": "Phone Number",
+            "label": "Your Phone Number",
             "placeholder": "Your Phone Number*",
             "field_name": "Phone",
             "autocomplete": "tel",
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": true
+            "half_width": false
           }
         },
         "field_email": {
           "type": "field",
           "settings": {
             "field_type": "email",
-            "label": "Email Address",
-            "placeholder": "Your Email Address*",
+            "label": "Your Email",
+            "placeholder": "Your Email*",
             "field_name": "Email",
             "autocomplete": "email",
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": true
-          }
-        },
-        "field_address": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Shipping Address",
-            "placeholder": "Street, City, State, ZIP*",
-            "field_name": "Shipping address",
-            "autocomplete": "street-address",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
             "half_width": false
           }
         },
-        "field_insurance": {
+        "field_doctor_name": {
           "type": "field",
           "settings": {
             "field_type": "text",
-            "label": "Insurance Provider",
-            "placeholder": "Insurance plan name*",
-            "field_name": "Insurance provider",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": true
-          }
-        },
-        "field_member": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Insurance Member ID",
-            "placeholder": "Member ID number*",
-            "field_name": "Member ID",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": true
-          }
-        },
-        "field_doctor": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Doctor's Information",
-            "placeholder": "Doctor's Name & Phone Number",
-            "field_name": "Doctor details",
+            "label": "Doctor's Name",
+            "placeholder": "Doctor's Name",
+            "field_name": "Doctor name",
             "required": false,
             "show_label": true,
             "show_number": true,
             "half_width": false
           }
         },
-        "field_due_date": {
+        "field_doctor_phone": {
           "type": "field",
           "settings": {
-            "field_type": "date",
-            "label": "Estimated Due Date",
-            "placeholder": "Estimated Due Date",
-            "field_name": "Due date",
+            "field_type": "tel",
+            "label": "Doctor's Phone Number",
+            "placeholder": "Doctor's Phone Number",
+            "field_name": "Doctor phone",
             "required": false,
             "show_label": true,
             "show_number": true,
-            "half_width": true
+            "half_width": false
           }
         },
         "field_prescription": {
           "type": "field",
           "settings": {
             "field_type": "file",
-            "label": "Prescription Upload",
-            "placeholder": "Upload your prescription",
+            "label": "Upload Prescription",
+            "placeholder": "Upload Prescription (Optional)",
             "field_name": "Prescription",
             "required": false,
             "show_label": true,
             "show_number": true,
-            "half_width": true,
+            "half_width": false,
             "file_accept": "image/*,.pdf",
             "file_button_text": "Browse"
-          }
-        },
-        "field_notes": {
-          "type": "field",
-          "settings": {
-            "field_type": "textarea",
-            "label": "Special Requests / Notes",
-            "placeholder": "Anything else we should know? (Optional)",
-            "field_name": "Notes",
-            "required": false,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "textarea_rows": 4
           }
         }
       },
       "block_order": [
         "field_name",
+        "field_state",
+        "field_plan",
+        "field_member",
         "field_phone",
         "field_email",
-        "field_address",
-        "field_insurance",
-        "field_member",
-        "field_doctor",
-        "field_due_date",
-        "field_prescription",
-        "field_notes"
+        "field_doctor_name",
+        "field_doctor_phone",
+        "field_prescription"
       ],
       "settings": {
         "heading": "<p>Your Insurance Hassle, Handled in 24 Hours</p>",
         "description": "<p>Stop wasting weeks on phone calls. Submit your prescription once — we'll handle insurance, prior authorization, and shipping while you focus on what matters.</p>",
         "eyebrow": "How It Works",
-        "button_text": "Submit & Get Started",
+        "button_text": "Verify coverage",
         "form_type": "Insurance Hassle (PDP)",
         "success_message": "Thanks — we'll be in touch within 24 hours.",
         "footnote": "<p>Your information is secure and only used to verify your insurance benefits.</p>",

@@ -229,7 +229,7 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How It Works" },
 
     { "type": "header", "content": "Submit & messages" },
-    { "type": "text", "id": "button_text", "label": "Submit button text", "default": "Submit & Get Started" },
+    { "type": "text", "id": "button_text", "label": "Submit button text", "default": "Verify coverage" },
     { "type": "text", "id": "form_type", "label": "Form type (hidden tag in email)", "default": "Insurance Hassle" },
     { "type": "text", "id": "success_message", "label": "Success message", "default": "Thanks — we'll be in touch within 24 hours." },
     { "type": "richtext", "id": "footnote", "label": "Footnote", "default": "<p>Your information is secure and only used to verify your insurance benefits.</p>" },
@@ -315,16 +315,15 @@
     {
       "name": "Insurance Hassle",
       "blocks": [
-        { "type": "field", "settings": { "field_type": "text",  "label": "Your Information",     "placeholder": "Your First and Last Name*",     "field_name": "Full name",          "autocomplete": "name",            "required": true } },
-        { "type": "field", "settings": { "field_type": "tel",   "label": "Phone Number",         "placeholder": "Your Phone Number*",            "field_name": "Phone",              "autocomplete": "tel",             "required": true } },
-        { "type": "field", "settings": { "field_type": "email", "label": "Email Address",        "placeholder": "Your Email Address*",           "field_name": "Email",              "autocomplete": "email",           "required": true } },
-        { "type": "field", "settings": { "field_type": "text",  "label": "Shipping Address",     "placeholder": "Street, City, State, ZIP*",     "field_name": "Shipping address",   "autocomplete": "street-address",  "required": true } },
-        { "type": "field", "settings": { "field_type": "text",  "label": "Insurance Provider",   "placeholder": "Insurance plan name*",          "field_name": "Insurance provider", "required": true } },
-        { "type": "field", "settings": { "field_type": "text",  "label": "Insurance Member ID",  "placeholder": "Member ID number*",             "field_name": "Member ID",          "required": true } },
-        { "type": "field", "settings": { "field_type": "text",  "label": "Doctor's Information", "placeholder": "Doctor's Name & Phone Number",  "field_name": "Doctor details",     "required": false } },
-        { "type": "field", "settings": { "field_type": "date",  "label": "Estimated Due Date",   "placeholder": "Estimated Due Date",            "field_name": "Due date",           "required": false } },
-        { "type": "field", "settings": { "field_type": "file",  "label": "Prescription Upload",  "placeholder": "Upload your prescription",      "field_name": "Prescription",       "required": false, "file_accept": "image/*,.pdf" } },
-        { "type": "field", "settings": { "field_type": "textarea", "label": "Special Requests / Notes", "placeholder": "Anything else we should know? (Optional)", "field_name": "Notes", "required": false, "textarea_rows": 4 } }
+        { "type": "field", "settings": { "field_type": "text",  "label": "Your First and Last Name", "placeholder": "Your First and Last Name*", "field_name": "Name",                  "autocomplete": "name",     "required": true } },
+        { "type": "field", "settings": { "field_type": "text",  "label": "State",                    "placeholder": "State*",                    "field_name": "State",                 "autocomplete": "address-level1", "required": true } },
+        { "type": "field", "settings": { "field_type": "text",  "label": "Insurance plan name",      "placeholder": "Insurance plan name*",      "field_name": "Insurance plan name",   "required": true } },
+        { "type": "field", "settings": { "field_type": "text",  "label": "Insurance member ID",      "placeholder": "Insurance member ID*",      "field_name": "Insurance member ID",   "required": true } },
+        { "type": "field", "settings": { "field_type": "tel",   "label": "Your Phone Number",        "placeholder": "Your Phone Number*",        "field_name": "Phone",                 "autocomplete": "tel",      "required": true } },
+        { "type": "field", "settings": { "field_type": "email", "label": "Your Email",               "placeholder": "Your Email*",               "field_name": "Email",                 "autocomplete": "email",    "required": true } },
+        { "type": "field", "settings": { "field_type": "text",  "label": "Doctor's Name",            "placeholder": "Doctor's Name",             "field_name": "Doctor name",           "required": false } },
+        { "type": "field", "settings": { "field_type": "tel",   "label": "Doctor's Phone Number",    "placeholder": "Doctor's Phone Number",     "field_name": "Doctor phone",          "required": false } },
+        { "type": "field", "settings": { "field_type": "file",  "label": "Upload Prescription",      "placeholder": "Upload Prescription (Optional)", "field_name": "Prescription",     "required": false, "file_accept": "image/*,.pdf" } }
       ]
     }
   ]
