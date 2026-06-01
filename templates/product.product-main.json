@@ -17,11 +17,11 @@
           "settings": {
             "title": "Details",
             "content": "<p>This pump delivers consistent suction with minimal noise, making it ideal for work or home use. It's lightweight enough to carry but powerful enough to get the job done efficiently. Compatible with standard bottles and storage bags.</p>",
+            "open_by_default": true,
             "metafield_namespace": "custom",
             "metafield_key": "detail",
             "heading_fields": "",
-            "description_fields": "",
-            "open_by_default": true
+            "description_fields": ""
           }
         },
         "accordion_shipping": {
@@ -29,11 +29,11 @@
           "settings": {
             "title": "Shipping",
             "content": "<p>We ship within five to seven business days to most addresses in the continental United States. Tracking information is sent automatically once your order leaves our warehouse. Free shipping applies to orders over fifty dollars.</p>",
+            "open_by_default": false,
             "metafield_namespace": "custom",
             "metafield_key": "shipping_and_returns",
-            "heading_fields": "shipheading1, shipheading2",
-            "description_fields": "shipdescrip1, shipdescip2",
-            "open_by_default": false
+            "heading_fields": "",
+            "description_fields": ""
           }
         },
         "accordion_returns": {
@@ -41,11 +41,11 @@
           "settings": {
             "title": "Returns",
             "content": "<p>Unopened items can be returned within thirty days for a full refund. We'll email you a prepaid shipping label so there's no cost to you. Contact our team with your order number to start the process.</p>",
+            "open_by_default": false,
             "metafield_namespace": "custom",
             "metafield_key": "shipping_and_returns",
-            "heading_fields": "returnheading1, returnheading2",
-            "description_fields": "returndescrip1, returndescrip2",
-            "open_by_default": false
+            "heading_fields": "",
+            "description_fields": ""
           }
         }
       },
@@ -209,48 +209,6 @@
         "secondary_link_color": "#000000"
       }
     },
-    "feature_spotlight_pdp": {
-      "type": "feature-spotlight",
-      "name": "Feature Spotlight",
-      "blocks": {
-        "feat_1": { "type": "feature", "settings": { "text": "Consistent suction that gets results" } },
-        "feat_2": { "type": "feature", "settings": { "text": "Works with standard bottles and bags" } },
-        "feat_3": { "type": "feature", "settings": { "text": "Lightweight and easy to carry anywhere" } }
-      },
-      "block_order": ["feat_1", "feat_2", "feat_3"],
-      "settings": {
-        "eyebrow": "Engineered",
-        "heading": "<p>Built to work hard and last long</p>",
-        "description": "<p>This pump was made for the demands of real life. Quiet enough for the office, strong enough for every session, and built to keep working through it all.</p>",
-        "primary_cta_text": "Learn more",
-        "primary_cta_link": "",
-        "secondary_cta_text": "Specs",
-        "secondary_cta_link": "",
-        "show_eyebrow": true,
-        "show_heading": true,
-        "show_description": true,
-        "show_features": true,
-        "show_primary_cta": true,
-        "show_secondary_cta": true,
-        "show_image": true,
-        "padding_top": 112,
-        "padding_bottom": 112,
-        "padding_x": 64,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "background_color": "#ffffff",
-        "eyebrow_color": "#000000",
-        "heading_color": "#000000",
-        "text_color": "#000000",
-        "feature_color": "#000000",
-        "icon_color": "#000000",
-        "image_bg": "#e6e6e6",
-        "primary_btn_bg": "#ffffff",
-        "primary_btn_text": "#000000",
-        "primary_btn_border": "#000000",
-        "secondary_link_color": "#000000"
-      }
-    },
     "insurance_form_K7kRbY": {
       "type": "insurance-form",
       "name": "Insurance Form",
@@ -276,227 +234,6 @@
         "input_border": "#000000",
         "input_text": "#000000",
         "input_placeholder_color": "#5a5a5a",
-        "button_bg": "#000000",
-        "button_text_color": "#ffffff",
-        "button_border": "#000000"
-      }
-    },
-    "insurance_hassle_pdp": {
-      "type": "insurance-hassle",
-      "blocks": {
-        "field_name": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Your First and Last Name",
-            "placeholder": "Your First and Last Name*",
-            "field_name": "Name",
-            "autocomplete": "name",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_state": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "State",
-            "placeholder": "State*",
-            "field_name": "State",
-            "autocomplete": "address-level1",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_plan": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Insurance plan name",
-            "placeholder": "Insurance plan name*",
-            "field_name": "Insurance plan name",
-            "autocomplete": "",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_member": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Insurance member ID",
-            "placeholder": "Insurance member ID*",
-            "field_name": "Insurance member ID",
-            "autocomplete": "",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_phone": {
-          "type": "field",
-          "settings": {
-            "field_type": "tel",
-            "label": "Your Phone Number",
-            "placeholder": "Your Phone Number*",
-            "field_name": "Phone",
-            "autocomplete": "tel",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_email": {
-          "type": "field",
-          "settings": {
-            "field_type": "email",
-            "label": "Your Email",
-            "placeholder": "Your Email*",
-            "field_name": "Email",
-            "autocomplete": "email",
-            "required": true,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_doctor_name": {
-          "type": "field",
-          "settings": {
-            "field_type": "text",
-            "label": "Doctor's Name",
-            "placeholder": "Doctor's Name",
-            "field_name": "Doctor name",
-            "autocomplete": "",
-            "required": false,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_doctor_phone": {
-          "type": "field",
-          "settings": {
-            "field_type": "tel",
-            "label": "Doctor's Phone Number",
-            "placeholder": "Doctor's Phone Number",
-            "field_name": "Doctor phone",
-            "autocomplete": "",
-            "required": false,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        },
-        "field_prescription": {
-          "type": "field",
-          "settings": {
-            "field_type": "file",
-            "label": "Upload Prescription",
-            "placeholder": "Upload Prescription (Optional)",
-            "field_name": "Prescription",
-            "autocomplete": "",
-            "required": false,
-            "show_label": true,
-            "show_number": true,
-            "half_width": false,
-            "help_text": "",
-            "options": "",
-            "textarea_rows": 4,
-            "file_accept": "image/*,.pdf",
-            "file_button_text": "Browse"
-          }
-        }
-      },
-      "block_order": [
-        "field_name",
-        "field_state",
-        "field_plan",
-        "field_member",
-        "field_phone",
-        "field_email",
-        "field_doctor_name",
-        "field_doctor_phone",
-        "field_prescription"
-      ],
-      "disabled": true,
-      "name": "Insurance Hassle",
-      "settings": {
-        "heading": "<p>Your Insurance Hassle, Handled in 24 Hours</p>",
-        "description": "<p>Stop wasting weeks on phone calls. Submit your prescription once — we'll handle insurance, prior authorization, and shipping while you focus on what matters.</p>",
-        "eyebrow": "",
-        "button_text": "Verify coverage",
-        "form_type": "Insurance Hassle (PDP)",
-        "success_message": "Thanks — we'll be in touch within 24 hours.",
-        "footnote": "<p>Your information is secure and only used to verify your insurance benefits.</p>",
-        "show_heading": true,
-        "show_description": true,
-        "show_eyebrow": false,
-        "show_footnote": true,
-        "show_field_labels": false,
-        "show_field_numbers": false,
-        "padding_top": 112,
-        "padding_bottom": 112,
-        "padding_x": 64,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "background_color": "#ffffff",
-        "heading_color": "#000000",
-        "description_color": "#000000",
-        "eyebrow_color": "#000000",
-        "footnote_color": "#5a5a5a",
-        "card_bg": "#ffffff",
-        "card_border": "#000000",
-        "input_text": "#000000",
-        "input_placeholder": "#999999",
         "button_bg": "#000000",
         "button_text_color": "#ffffff",
         "button_border": "#000000"
@@ -709,11 +446,9 @@
   },
   "order": [
     "main",
-    "feature_spotlight_pdp",
     "step_cards_PexFix",
     "coverage_card_mHVkdQ",
     "insurance_form_K7kRbY",
-    "insurance_hassle_pdp",
     "testimonials_NUrp6C",
     "cta_strip_MXURRy",
     "faq_QT6yLL",
