@@ -372,6 +372,7 @@
         "feature_KHcdPW": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/volume_off.png",
             "heading": "Quiet operation",
             "description": "Runs at a low volume so you can pump at work, home, or anywhere without drawing attention.",
             "link_text": "Details",
@@ -381,6 +382,7 @@
         "feature_aUVwea": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/details.png",
             "heading": "Durable design",
             "description": "Built to handle daily use without losing power or breaking down. This pump is made to last through every stage.",
             "link_text": "Details",
@@ -390,6 +392,7 @@
         "feature_QDTKL8": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/hardware.png",
             "heading": "Easy to use",
             "description": "Simple controls and straightforward assembly mean you spend less time figuring it out and more time with your baby.",
             "link_text": "Details",
