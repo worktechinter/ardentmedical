@@ -16,6 +16,7 @@
   assign pad_x = section.settings.padding_x | default: 64
   assign margin_top = section.settings.margin_top | default: 0
   assign margin_bottom = section.settings.margin_bottom | default: 0
+  assign image_alt = section.settings.heading | default: '' | strip_html | strip
 -%}
 
 <section class="fs-section" style="
@@ -102,7 +103,7 @@
       <div class="fs-image" data-reveal data-reveal-delay="200">
         {%- if section.settings.image != blank -%}
           {{ section.settings.image | image_url: width: 1800 | image_tag:
-            alt: section.settings.heading | strip_html,
+            alt: image_alt,
             loading: 'lazy',
             class: 'fs-image-img',
             widths: '600, 900, 1200, 1600, 1800',
