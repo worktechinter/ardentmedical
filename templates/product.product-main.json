@@ -49,67 +49,75 @@
         "secondary_btn_text": "#000000"
       }
     },
-    "steps_bJGUKJ": {
-      "type": "steps",
+    "step_cards_PexFix": {
+      "type": "step-cards",
       "blocks": {
-        "step_VfHrgP": {
+        "step_Y9VebV": {
           "type": "step",
           "settings": {
-            "step_number": "Step 1",
-            "heading": "Check your coverage",
-            "description": "Check your insurance, and let's verify what's covered.",
-            "link_text": "Check Coverage",
+            "heading": "Submit your insurance information",
+            "description": "Tell us about your plan and coverage details.",
+            "link_text": "Next",
             "link": ""
           }
         },
-        "step_wBcxnx": {
+        "step_kw9mxt": {
           "type": "step",
           "settings": {
-            "step_number": "Step 2",
-            "heading": "Shop our products",
-            "description": "Browse breast pumps, belly bands, and maternity essentials you need.",
-            "link_text": "Shop Now",
+            "heading": "We verify your coverage",
+            "description": "Our team checks what your insurance will cover.",
+            "link_text": "Next",
             "link": ""
           }
         },
-        "step_kUPXci": {
+        "step_LPQyJH": {
           "type": "step",
           "settings": {
-            "step_number": "Step 3",
-            "heading": "Focus on your baby",
-            "description": "We handle everything: from insurance, to your door, and beyond.",
-            "link_text": "Learn More",
+            "heading": "Choose your products",
+            "description": "Browse breast pumps, storage bags, and essentials.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_G9gPaT": {
+          "type": "step",
+          "settings": {
+            "heading": "We deliver direct to your door",
+            "description": "Your maternity products arrive when you need them.",
+            "link_text": "Done",
             "link": ""
           }
         }
       },
       "block_order": [
-        "step_VfHrgP",
-        "step_wBcxnx",
-        "step_kUPXci"
+        "step_Y9VebV",
+        "step_kw9mxt",
+        "step_LPQyJH",
+        "step_G9gPaT"
       ],
-      "name": "Steps",
+      "name": "Step Cards",
       "settings": {
-        "eyebrow": "3 SIMPLE STEPS TO",
-        "heading": "Get the Maternity Products You Need Through Every Stage of Motherhood Covered Through Insurance",
-        "subheading": "From breast pumps, to milk bags and belly bands, we've got you covered.",
+        "eyebrow": "Simple",
+        "heading": "Four steps to coverage",
+        "description": "We handle the paperwork so you don't have to.",
         "show_eyebrow": true,
         "show_heading": true,
-        "show_subheading": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "padding_x": 0,
+        "show_description": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
         "margin_top": 0,
         "margin_bottom": 0,
         "background_color": "#ffffff",
         "eyebrow_color": "#000000",
         "heading_color": "#000000",
         "sub_color": "#000000",
+        "card_fallback_color": "#8a8a8a",
         "card_overlay_color": "#000000",
         "card_overlay_opacity": 40,
-        "card_number_color": "#ffffff",
+        "card_icon_color": "#ffffff",
         "card_heading_color": "#ffffff",
-        "card_text_color": "#ffffff",
+        "card_desc_color": "#ffffff",
         "card_link_color": "#ffffff"
       }
     },
@@ -160,7 +168,7 @@
   },
   "order": [
     "main",
-    "steps_bJGUKJ",
+    "step_cards_PexFix",
     "coverage_card_mHVkdQ"
   ]
 }
