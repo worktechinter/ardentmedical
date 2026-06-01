@@ -49,6 +49,70 @@
         "secondary_btn_text": "#000000"
       }
     },
+    "steps_bJGUKJ": {
+      "type": "steps",
+      "blocks": {
+        "step_VfHrgP": {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 1",
+            "heading": "Check your coverage",
+            "description": "Check your insurance, and let's verify what's covered.",
+            "link_text": "Check Coverage",
+            "link": ""
+          }
+        },
+        "step_wBcxnx": {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 2",
+            "heading": "Shop our products",
+            "description": "Browse breast pumps, belly bands, and maternity essentials you need.",
+            "link_text": "Shop Now",
+            "link": ""
+          }
+        },
+        "step_kUPXci": {
+          "type": "step",
+          "settings": {
+            "step_number": "Step 3",
+            "heading": "Focus on your baby",
+            "description": "We handle everything: from insurance, to your door, and beyond.",
+            "link_text": "Learn More",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_VfHrgP",
+        "step_wBcxnx",
+        "step_kUPXci"
+      ],
+      "name": "Steps",
+      "settings": {
+        "eyebrow": "3 SIMPLE STEPS TO",
+        "heading": "Get the Maternity Products You Need Through Every Stage of Motherhood Covered Through Insurance",
+        "subheading": "From breast pumps, to milk bags and belly bands, we've got you covered.",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_subheading": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_x": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "card_overlay_color": "#000000",
+        "card_overlay_opacity": 40,
+        "card_number_color": "#ffffff",
+        "card_heading_color": "#ffffff",
+        "card_text_color": "#ffffff",
+        "card_link_color": "#ffffff"
+      }
+    },
     "coverage_card_mHVkdQ": {
       "type": "coverage-card",
       "name": "Coverage Card",
@@ -96,6 +160,7 @@
   },
   "order": [
     "main",
+    "steps_bJGUKJ",
     "coverage_card_mHVkdQ"
   ]
 }
