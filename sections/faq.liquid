@@ -25,37 +25,43 @@
   assign margin_bottom = section.settings.margin_bottom | default: 0
 
   comment
-    Resolve the product metaobject value. Hardcoded path is the
-    most reliable; bracket-notation fallback supports the optional
-    namespace/key overrides in the schema (when set to something
-    other than the defaults).
+    Resolve the product metaobject. Try several common paths so this
+    works whether the merchant named the metafield "frequently_asked_questions",
+    "faq", or "faqs" (single OR list reference). Last try uses the
+    namespace/key overrides from the section settings.
   endcomment
-  assign faq_metaobject = nil
+  assign faq_raw = nil
   if product != blank
-    assign faq_metaobject = product.metafields.custom.frequently_asked_questions.value
-
-    if faq_metaobject == blank and section.settings.faqs_metafield_namespace != blank and section.settings.faqs_metafield_key != blank
+    if product.metafields.custom.frequently_asked_questions != blank
+      assign faq_raw = product.metafields.custom.frequently_asked_questions
+    elsif product.metafields.custom.faq != blank
+      assign faq_raw = product.metafields.custom.faq
+    elsif product.metafields.custom.faqs != blank
+      assign faq_raw = product.metafields.custom.faqs
+    elsif section.settings.faqs_metafield_namespace != blank and section.settings.faqs_metafield_key != blank
       assign mf_ns = section.settings.faqs_metafield_namespace
       assign mf_key = section.settings.faqs_metafield_key
-      assign faq_metaobject = product.metafields[mf_ns][mf_key].value
+      assign faq_raw = product.metafields[mf_ns][mf_key]
     endif
   endif
 
-  assign dynamic_count = 0
-  if faq_metaobject != blank
-    for i in (1..5)
-      assign q_key = 'question' | append: i
-      assign a_key = 'answer' | append: i
-      assign q_val = faq_metaobject[q_key]
-      assign a_val = faq_metaobject[a_key]
-      if q_val != blank or a_val != blank
-        assign dynamic_count = dynamic_count | plus: 1
-      endif
-    endfor
+  comment
+    Reduce the metafield reference to a single metaobject instance.
+    Handles: single reference (.value is the metaobject) and list
+    reference (.value is an array — take the first entry).
+  endcomment
+  assign faq_metaobject = nil
+  if faq_raw != blank
+    assign faq_value = faq_raw.value
+    if faq_value.size and faq_value.size > 0 and faq_value[0]
+      assign faq_metaobject = faq_value[0]
+    else
+      assign faq_metaobject = faq_value
+    endif
   endif
 
   assign use_dynamic = false
-  if dynamic_count > 0
+  if faq_metaobject
     assign use_dynamic = true
   endif
 -%}
@@ -88,6 +94,15 @@
         {%- endif -%}
       {%- endif -%}
     </div>
+
+    {%- comment -%}
+      Diagnostic HTML comment — view page source on a product page to
+      confirm what Shopify resolved. If "metaobject: nil", the product
+      doesn't have the metafield set (or the namespace/key is different
+      from custom.frequently_asked_questions, custom.faq, custom.faqs,
+      or the override in section settings).
+    {%- endcomment -%}
+    <!-- faq debug: product={{ product.handle | default: 'none' }} | raw_metafield={% if faq_raw != blank %}found{% else %}nil{% endif %} | metaobject={% if faq_metaobject %}found{% else %}nil{% endif %} | sample_q1={{ faq_metaobject.question1 | default: '(blank)' }} -->
 
     <div class="faq-list">
       {%- if use_dynamic -%}
