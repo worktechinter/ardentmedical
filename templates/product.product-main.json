@@ -166,6 +166,36 @@
         "secondary_link_color": "#000000"
       }
     },
+    "insurance_form_K7kRbY": {
+      "type": "insurance-form",
+      "name": "Insurance Form",
+      "settings": {
+        "heading": "<p>Less insurance hassle. More baby time.</p>",
+        "description": "<p>Enter your details and one of our team will check what your plan covers. You'll receive a personalized email within 24 hours detailing <strong>all the products you're covered for</strong>.</p>",
+        "button_text": "Verify coverage",
+        "success_message": "Thanks — we'll be in touch within 24 hours.",
+        "footnote": "<p>Your information is secure and used only for insurance verification purposes.</p>",
+        "show_heading": true,
+        "show_description": true,
+        "show_footnote": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "footnote_color": "#000000",
+        "input_bg": "#ffffff",
+        "input_border": "#000000",
+        "input_text": "#000000",
+        "input_placeholder_color": "#5a5a5a",
+        "button_bg": "#000000",
+        "button_text_color": "#ffffff",
+        "button_border": "#000000"
+      }
+    },
     "insurance_hassle_pdp": {
       "type": "insurance-hassle",
       "blocks": {
@@ -352,6 +382,7 @@
         "field_doctor_phone",
         "field_prescription"
       ],
+      "disabled": true,
       "name": "Insurance Hassle",
       "settings": {
         "heading": "<p>Your Insurance Hassle, Handled in 24 Hours</p>",
@@ -595,6 +626,7 @@
     "main",
     "step_cards_PexFix",
     "coverage_card_mHVkdQ",
+    "insurance_form_K7kRbY",
     "insurance_hassle_pdp",
     "testimonials_NUrp6C",
     "cta_strip_MXURRy",
