@@ -285,13 +285,61 @@
           <div class="pdp-accordion">
             {%- for block in section.blocks -%}
               {%- if block.type == 'accordion' -%}
-                {%- assign body_html = block.settings.content -%}
-                {%- if block.settings.metafield_namespace != blank and block.settings.metafield_key != blank -%}
-                  {%- assign mf = product.metafields[block.settings.metafield_namespace][block.settings.metafield_key] -%}
-                  {%- if mf != blank -%}
-                    {%- assign body_html = mf -%}
-                  {%- endif -%}
-                {%- endif -%}
+                {%- liquid
+                  comment
+                    Resolve accordion body in this priority:
+                      1. Metaobject heading/description pairs   (when heading_fields + description_fields are set
+                                                                 and the product metafield resolves to a metaobject)
+                      2. Single metafield                       (when metafield_namespace + metafield_key are set
+                                                                 and the metafield has a value)
+                      3. Default richtext content
+                  endcomment
+                  assign body_html = block.settings.content
+                  assign pair_html = ''
+                  assign use_pairs = false
+
+                  if block.settings.metafield_namespace != blank and block.settings.metafield_key != blank
+                    assign mf = product.metafields[block.settings.metafield_namespace][block.settings.metafield_key]
+
+                    if block.settings.heading_fields != blank and block.settings.description_fields != blank
+                      assign mo = mf.value
+                      if mo != blank
+                        assign h_keys = block.settings.heading_fields | split: ','
+                        assign d_keys = block.settings.description_fields | split: ','
+                        for h_key in h_keys
+                          assign h_key_clean = h_key | strip
+                          assign d_key_raw = d_keys[forloop.index0] | default: ''
+                          assign d_key_clean = d_key_raw | strip
+                          assign h_val = mo[h_key_clean]
+                          assign d_val = mo[d_key_clean]
+                          if h_val == blank and d_val == blank
+                            continue
+                          endif
+                          assign use_pairs = true
+                          capture pair_html
+                            echo pair_html
+                            echo '<div class="pdp-accordion-pair">'
+                            if h_val != blank
+                              echo '<h4 class="pdp-accordion-subheading">'
+                              echo h_val
+                              echo '</h4>'
+                            endif
+                            if d_val != blank
+                              echo '<div class="pdp-accordion-subbody">'
+                              echo d_val
+                              echo '</div>'
+                            endif
+                            echo '</div>'
+                          endcapture
+                        endfor
+                      endif
+                    endif
+
+                    if use_pairs == false and mf != blank
+                      assign body_html = mf
+                    endif
+                  endif
+                -%}
 
                 <details class="pdp-accordion-item" {% if block.settings.open_by_default %}open{% endif %} {{ block.shopify_attributes }}>
                   <summary class="pdp-accordion-summary">
@@ -303,7 +351,9 @@
                       </svg>
                     </span>
                   </summary>
-                  <div class="pdp-accordion-body">{{ body_html }}</div>
+                  <div class="pdp-accordion-body">
+                    {%- if use_pairs -%}{{ pair_html }}{%- else -%}{{ body_html }}{%- endif -%}
+                  </div>
                 </details>
               {%- endif -%}
             {%- endfor -%}
@@ -548,11 +598,18 @@
       "limit": 8,
       "settings": [
         { "type": "text", "id": "title", "label": "Title", "default": "Details" },
-        { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Add a description here. This default copy is used when the product metafield below is empty.</p>" },
-        { "type": "header", "content": "Per-product override" },
-        { "type": "text", "id": "metafield_namespace", "label": "Metafield namespace", "info": "Optional. Example: custom" },
-        { "type": "text", "id": "metafield_key", "label": "Metafield key", "info": "Optional. Example: details. When present on a product it overrides the content above." },
-        { "type": "checkbox", "id": "open_by_default", "label": "Open by default", "default": false }
+        { "type": "richtext", "id": "content", "label": "Default content", "default": "<p>Add a description here. This default copy is used when the product metafield below is empty.</p>" },
+        { "type": "checkbox", "id": "open_by_default", "label": "Open by default", "default": false },
+
+        { "type": "header", "content": "Per-product source" },
+        { "type": "paragraph", "content": "Optional. When the product has this metafield, it overrides the default content above." },
+        { "type": "text", "id": "metafield_namespace", "label": "Metafield namespace", "info": "Example: custom" },
+        { "type": "text", "id": "metafield_key", "label": "Metafield key", "info": "Example: detail (richtext) or shipping_and_returns (metaobject reference)." },
+
+        { "type": "header", "content": "Metaobject heading/description pairs" },
+        { "type": "paragraph", "content": "Use when the metafield points to a metaobject with multiple heading + description fields (e.g. shipheading1 / shipdescrip1, shipheading2 / shipdescip2). Comma-separated. Leave blank for a single richtext metafield." },
+        { "type": "text", "id": "heading_fields", "label": "Heading field names", "info": "e.g. shipheading1, shipheading2" },
+        { "type": "text", "id": "description_fields", "label": "Description field names", "info": "e.g. shipdescrip1, shipdescip2" }
       ]
     }
   ],
@@ -566,7 +623,8 @@
             "title": "Details",
             "content": "<p>This pump delivers consistent suction with minimal noise, making it ideal for work or home use. It's lightweight enough to carry but powerful enough to get the job done efficiently. Compatible with standard bottles and storage bags.</p>",
             "metafield_namespace": "custom",
-            "metafield_key": "details"
+            "metafield_key": "detail",
+            "open_by_default": true
           }
         },
         {
@@ -575,7 +633,9 @@
             "title": "Shipping",
             "content": "<p>We ship within five to seven business days to most addresses in the continental United States. Tracking information is sent automatically once your order leaves our warehouse. Free shipping applies to orders over fifty dollars.</p>",
             "metafield_namespace": "custom",
-            "metafield_key": "shipping"
+            "metafield_key": "shipping_and_returns",
+            "heading_fields": "shipheading1, shipheading2",
+            "description_fields": "shipdescrip1, shipdescip2"
           }
         },
         {
@@ -584,7 +644,9 @@
             "title": "Returns",
             "content": "<p>Unopened items can be returned within thirty days for a full refund. We'll email you a prepaid shipping label so there's no cost to you. Contact our team with your order number to start the process.</p>",
             "metafield_namespace": "custom",
-            "metafield_key": "returns"
+            "metafield_key": "shipping_and_returns",
+            "heading_fields": "returnheading1, returnheading2",
+            "description_fields": "returndescrip1, returndescrip2"
           }
         }
       ]

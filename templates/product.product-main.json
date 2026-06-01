@@ -11,6 +11,49 @@
   "sections": {
     "main": {
       "type": "main-product",
+      "blocks": {
+        "accordion_details": {
+          "type": "accordion",
+          "settings": {
+            "title": "Details",
+            "content": "<p>This pump delivers consistent suction with minimal noise, making it ideal for work or home use. It's lightweight enough to carry but powerful enough to get the job done efficiently. Compatible with standard bottles and storage bags.</p>",
+            "metafield_namespace": "custom",
+            "metafield_key": "detail",
+            "heading_fields": "",
+            "description_fields": "",
+            "open_by_default": true
+          }
+        },
+        "accordion_shipping": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping",
+            "content": "<p>We ship within five to seven business days to most addresses in the continental United States. Tracking information is sent automatically once your order leaves our warehouse. Free shipping applies to orders over fifty dollars.</p>",
+            "metafield_namespace": "custom",
+            "metafield_key": "shipping_and_returns",
+            "heading_fields": "shipheading1, shipheading2",
+            "description_fields": "shipdescrip1, shipdescip2",
+            "open_by_default": false
+          }
+        },
+        "accordion_returns": {
+          "type": "accordion",
+          "settings": {
+            "title": "Returns",
+            "content": "<p>Unopened items can be returned within thirty days for a full refund. We'll email you a prepaid shipping label so there's no cost to you. Contact our team with your order number to start the process.</p>",
+            "metafield_namespace": "custom",
+            "metafield_key": "shipping_and_returns",
+            "heading_fields": "returnheading1, returnheading2",
+            "description_fields": "returndescrip1, returndescrip2",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_details",
+        "accordion_shipping",
+        "accordion_returns"
+      ],
       "settings": {
         "show_breadcrumb": true,
         "breadcrumb_root_label": "Shop all",

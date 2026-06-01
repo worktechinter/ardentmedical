@@ -5085,6 +5085,18 @@ a.lg-item:hover { opacity: 0.65; }
 .pdp-accordion-body ul { list-style: disc; }
 .pdp-accordion-body ol { list-style: decimal; }
 
+.pdp-accordion-pair + .pdp-accordion-pair { margin-top: 16px; }
+.pdp-accordion-subheading {
+    margin: 0 0 6px;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--pdp-text, #000);
+}
+.pdp-accordion-subbody { font: inherit; color: inherit; }
+.pdp-accordion-subbody > *:last-child { margin-bottom: 0; }
+
 /* ---- Gallery ---- */
 .pdp-gallery {
     flex: 1 1 0;
