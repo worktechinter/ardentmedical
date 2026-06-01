@@ -366,6 +366,68 @@
         "secondary_link_color": "#000000"
       }
     },
+    "image_features_r4J8NH": {
+      "type": "image-features",
+      "blocks": {
+        "feature_KHcdPW": {
+          "type": "feature",
+          "settings": {
+            "heading": "Quiet operation",
+            "description": "Runs at a low volume so you can pump at work, home, or anywhere without drawing attention.",
+            "link_text": "Details",
+            "link": ""
+          }
+        },
+        "feature_aUVwea": {
+          "type": "feature",
+          "settings": {
+            "heading": "Durable design",
+            "description": "Built to handle daily use without losing power or breaking down. This pump is made to last through every stage.",
+            "link_text": "Details",
+            "link": ""
+          }
+        },
+        "feature_QDTKL8": {
+          "type": "feature",
+          "settings": {
+            "heading": "Easy to use",
+            "description": "Simple controls and straightforward assembly mean you spend less time figuring it out and more time with your baby.",
+            "link_text": "Details",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_KHcdPW",
+        "feature_aUVwea",
+        "feature_QDTKL8"
+      ],
+      "name": "Image Features",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "description": "",
+        "image_position": "left",
+        "show_eyebrow": false,
+        "show_heading": false,
+        "show_description": false,
+        "show_image": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "image_bg": "#e6e6e6",
+        "icon_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "link_color": "#000000"
+      }
+    },
     "cta_strip_MXURRy": {
       "type": "cta-strip",
       "name": "CTA Strip",
@@ -513,6 +575,7 @@
     "testimonials_NUrp6C",
     "feature_spotlight_nNepxV",
     "coverage_card_mHVkdQ",
+    "image_features_r4J8NH",
     "cta_strip_MXURRy",
     "faq_QT6yLL",
     "cta_strip_8AqMdm"
