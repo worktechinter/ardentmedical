@@ -304,6 +304,67 @@
         "link_color": "#000000"
       }
     },
+    "feature_spotlight_nNepxV": {
+      "type": "feature-spotlight",
+      "blocks": {
+        "feature_f94eYB": {
+          "type": "feature",
+          "settings": {
+            "text": "Consistent suction that gets results"
+          }
+        },
+        "feature_6xqEKp": {
+          "type": "feature",
+          "settings": {
+            "text": "Works with standard bottles and bags"
+          }
+        },
+        "feature_9nLadY": {
+          "type": "feature",
+          "settings": {
+            "text": "Lightweight and easy to carry anywhere"
+          }
+        }
+      },
+      "block_order": [
+        "feature_f94eYB",
+        "feature_6xqEKp",
+        "feature_9nLadY"
+      ],
+      "name": "Feature Spotlight",
+      "settings": {
+        "eyebrow": "Engineered",
+        "heading": "<p>Built to work hard and last long</p>",
+        "description": "<p>This pump was made for the demands of real life. Quiet enough for the office, strong enough for every session, and built to keep working through it all.</p>",
+        "primary_cta_text": "Learn more",
+        "primary_cta_link": "",
+        "secondary_cta_text": "Specs",
+        "secondary_cta_link": "",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_description": true,
+        "show_features": true,
+        "show_primary_cta": true,
+        "show_secondary_cta": true,
+        "show_image": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "feature_color": "#000000",
+        "icon_color": "#000000",
+        "image_bg": "#e6e6e6",
+        "primary_btn_bg": "#ffffff",
+        "primary_btn_text": "#000000",
+        "primary_btn_border": "#000000",
+        "secondary_link_color": "#000000"
+      }
+    },
     "cta_strip_MXURRy": {
       "type": "cta-strip",
       "name": "CTA Strip",
@@ -450,6 +511,7 @@
     "coverage_card_mHVkdQ",
     "insurance_form_K7kRbY",
     "testimonials_NUrp6C",
+    "feature_spotlight_nNepxV",
     "cta_strip_MXURRy",
     "faq_QT6yLL",
     "cta_strip_8AqMdm"
