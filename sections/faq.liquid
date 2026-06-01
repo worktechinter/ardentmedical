@@ -3,6 +3,18 @@
   File: sections/faq.liquid
   Figma: "FAQ / 4"
   Uses native <details>/<summary> — no JS needed for the accordion.
+
+  Supports two data sources:
+    1. Static blocks (default) — added through the theme editor.
+    2. A product metaobject reference. When enabled, the section pulls
+       questions from `product.metafields.<ns>.<key>` (default
+       `custom.frequently_asked_questions`). The metaobject definition
+       is expected to have flat fields: question1..question5 (single-line
+       text) and answer1..answer5 (multi-line text). Up to 5 entries
+       are rendered; empty pairs are skipped.
+
+  Falls back to blocks if not on a product page, if no metafield is set,
+  or if the metaobject has no populated question pairs.
 {% endcomment %}
 
 {%- liquid
@@ -11,6 +23,30 @@
   assign pad_x = section.settings.padding_x | default: 64
   assign margin_top = section.settings.margin_top | default: 0
   assign margin_bottom = section.settings.margin_bottom | default: 0
+
+  assign faq_obj = nil
+  assign dynamic_count = 0
+  if section.settings.use_product_faqs and product != blank
+    assign mf_ns = section.settings.faqs_metafield_namespace | default: 'custom'
+    assign mf_key = section.settings.faqs_metafield_key | default: 'frequently_asked_questions'
+    assign faq_obj = product.metafields[mf_ns][mf_key].value
+    if faq_obj != blank
+      for i in (1..5)
+        assign q_key = 'question' | append: i
+        assign a_key = 'answer' | append: i
+        assign q_val = faq_obj[q_key]
+        assign a_val = faq_obj[a_key]
+        if q_val != blank or a_val != blank
+          assign dynamic_count = dynamic_count | plus: 1
+        endif
+      endfor
+    endif
+  endif
+
+  assign use_dynamic = false
+  if dynamic_count > 0
+    assign use_dynamic = true
+  endif
 -%}
 
 <section class="faq-section" style="
@@ -43,12 +79,19 @@
     </div>
 
     <div class="faq-list">
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'question' -%}
-          {%- assign d = forloop.index0 | times: 80 -%}
-          <details class="faq-item" data-reveal data-reveal-delay="{{ d }}" {% if block.settings.open_by_default %}open{% endif %} {{ block.shopify_attributes }}>
+      {%- if use_dynamic -%}
+        {%- assign rendered = 0 -%}
+        {%- for i in (1..5) -%}
+          {%- assign q_key = 'question' | append: i -%}
+          {%- assign a_key = 'answer' | append: i -%}
+          {%- assign q_val = faq_obj[q_key] -%}
+          {%- assign a_val = faq_obj[a_key] -%}
+          {%- if q_val == blank and a_val == blank -%}{%- continue -%}{%- endif -%}
+          {%- assign d = rendered | times: 80 -%}
+          {%- assign rendered = rendered | plus: 1 -%}
+          <details class="faq-item" data-reveal data-reveal-delay="{{ d }}"{% if section.settings.first_open_dynamic and rendered == 1 %} open{% endif %}>
             <summary class="faq-question">
-              <span class="faq-question-text">{{ block.settings.question }}</span>
+              <span class="faq-question-text">{{ q_val }}</span>
               <span class="faq-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -56,10 +99,28 @@
                 </svg>
               </span>
             </summary>
-            <div class="faq-answer">{{ block.settings.answer }}</div>
+            <div class="faq-answer">{{ a_val | newline_to_br }}</div>
           </details>
-        {%- endif -%}
-      {%- endfor -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'question' -%}
+            {%- assign d = forloop.index0 | times: 80 -%}
+            <details class="faq-item" data-reveal data-reveal-delay="{{ d }}" {% if block.settings.open_by_default %}open{% endif %} {{ block.shopify_attributes }}>
+              <summary class="faq-question">
+                <span class="faq-question-text">{{ block.settings.question }}</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-answer">{{ block.settings.answer }}</div>
+            </details>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
     </div>
 
   </div>
@@ -72,6 +133,13 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Find answers about your coverage and what happens next." },
+
+    { "type": "header", "content": "FAQ source (product page only)" },
+    { "type": "paragraph", "content": "Pull questions from a product metaobject. Falls back to the static blocks below if no metafield is set on the product, or if outside a product page." },
+    { "type": "checkbox", "id": "use_product_faqs", "label": "Use product FAQ metafield", "default": false },
+    { "type": "text", "id": "faqs_metafield_namespace", "label": "Metafield namespace", "default": "custom" },
+    { "type": "text", "id": "faqs_metafield_key", "label": "Metafield key", "default": "frequently_asked_questions", "info": "Type: reference → metaobject (frequently_asked_questions). The metaobject must have fields question1..question5 and answer1..answer5." },
+    { "type": "checkbox", "id": "first_open_dynamic", "label": "Open the first question by default", "default": true },
 
     { "type": "header", "content": "Show / hide elements" },
     { "type": "checkbox", "id": "show_heading", "label": "Show heading", "default": true },

@@ -535,6 +535,10 @@
       "settings": {
         "heading": "Questions",
         "subheading": "Find answers about your coverage and what happens next.",
+        "use_product_faqs": true,
+        "faqs_metafield_namespace": "custom",
+        "faqs_metafield_key": "frequently_asked_questions",
+        "first_open_dynamic": true,
         "show_heading": true,
         "show_subheading": true,
         "padding_top": 112,
