@@ -168,7 +168,6 @@
     },
     "insurance_hassle_pdp": {
       "type": "insurance-hassle",
-      "name": "Insurance Hassle",
       "blocks": {
         "field_name": {
           "type": "field",
@@ -181,7 +180,12 @@
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_state": {
@@ -195,7 +199,12 @@
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_plan": {
@@ -205,10 +214,16 @@
             "label": "Insurance plan name",
             "placeholder": "Insurance plan name*",
             "field_name": "Insurance plan name",
+            "autocomplete": "",
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_member": {
@@ -218,10 +233,16 @@
             "label": "Insurance member ID",
             "placeholder": "Insurance member ID*",
             "field_name": "Insurance member ID",
+            "autocomplete": "",
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_phone": {
@@ -235,7 +256,12 @@
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_email": {
@@ -249,7 +275,12 @@
             "required": true,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_doctor_name": {
@@ -259,10 +290,16 @@
             "label": "Doctor's Name",
             "placeholder": "Doctor's Name",
             "field_name": "Doctor name",
+            "autocomplete": "",
             "required": false,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_doctor_phone": {
@@ -272,10 +309,16 @@
             "label": "Doctor's Phone Number",
             "placeholder": "Doctor's Phone Number",
             "field_name": "Doctor phone",
+            "autocomplete": "",
             "required": false,
             "show_label": true,
             "show_number": true,
-            "half_width": false
+            "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
           }
         },
         "field_prescription": {
@@ -285,10 +328,14 @@
             "label": "Upload Prescription",
             "placeholder": "Upload Prescription (Optional)",
             "field_name": "Prescription",
+            "autocomplete": "",
             "required": false,
             "show_label": true,
             "show_number": true,
             "half_width": false,
+            "help_text": "",
+            "options": "",
+            "textarea_rows": 4,
             "file_accept": "image/*,.pdf",
             "file_button_text": "Browse"
           }
@@ -305,17 +352,18 @@
         "field_doctor_phone",
         "field_prescription"
       ],
+      "name": "Insurance Hassle",
       "settings": {
         "heading": "<p>Your Insurance Hassle, Handled in 24 Hours</p>",
         "description": "<p>Stop wasting weeks on phone calls. Submit your prescription once — we'll handle insurance, prior authorization, and shipping while you focus on what matters.</p>",
-        "eyebrow": "How It Works",
+        "eyebrow": "",
         "button_text": "Verify coverage",
         "form_type": "Insurance Hassle (PDP)",
         "success_message": "Thanks — we'll be in touch within 24 hours.",
         "footnote": "<p>Your information is secure and only used to verify your insurance benefits.</p>",
         "show_heading": true,
         "show_description": true,
-        "show_eyebrow": true,
+        "show_eyebrow": false,
         "show_footnote": true,
         "show_field_labels": false,
         "show_field_numbers": false,
