@@ -166,6 +166,79 @@
         "secondary_link_color": "#000000"
       }
     },
+    "faq_QT6yLL": {
+      "type": "faq",
+      "blocks": {
+        "question_qnTEjp": {
+          "type": "question",
+          "settings": {
+            "question": "What does insurance cover?",
+            "answer": "<p>Most plans cover breast pumps, storage bags, and postpartum essentials. We verify your specific benefits once you submit your information.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_6zCECG": {
+          "type": "question",
+          "settings": {
+            "question": "How long does verification take?",
+            "answer": "<p>We typically verify coverage within 24 hours. You'll receive an email with your results and next steps.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_34gcUn": {
+          "type": "question",
+          "settings": {
+            "question": "Is my information private?",
+            "answer": "<p>Yes. We protect your data and use it only to verify your insurance coverage. Your privacy matters to us.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_4ebGbg": {
+          "type": "question",
+          "settings": {
+            "question": "What if I'm not covered?",
+            "answer": "<p>We'll let you know what your plan includes and help you explore options.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_BEw3X8": {
+          "type": "question",
+          "settings": {
+            "question": "Can I shop before verification?",
+            "answer": "<p>You can browse and buy our products anytime without insurance coverage.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "question_qnTEjp",
+        "question_6zCECG",
+        "question_34gcUn",
+        "question_4ebGbg",
+        "question_BEw3X8"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "heading": "Questions",
+        "subheading": "Find answers about your coverage and what happens next.",
+        "show_heading": true,
+        "show_subheading": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "item_bg": "#ffffff",
+        "item_bg_hover": "#fafafa",
+        "item_border": "#000000",
+        "question_color": "#000000",
+        "answer_color": "#000000",
+        "icon_color": "#000000"
+      }
+    },
     "cta_strip_8AqMdm": {
       "type": "cta-strip",
       "name": "CTA Strip",
@@ -202,6 +275,7 @@
     "main",
     "step_cards_PexFix",
     "coverage_card_mHVkdQ",
+    "faq_QT6yLL",
     "cta_strip_8AqMdm"
   ]
 }
