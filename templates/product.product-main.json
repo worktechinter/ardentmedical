@@ -166,6 +166,191 @@
         "secondary_link_color": "#000000"
       }
     },
+    "insurance_hassle_pdp": {
+      "type": "insurance-hassle",
+      "name": "Insurance Hassle",
+      "blocks": {
+        "field_name": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Your Information",
+            "placeholder": "Your First and Last Name*",
+            "field_name": "Full name",
+            "autocomplete": "name",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false
+          }
+        },
+        "field_phone": {
+          "type": "field",
+          "settings": {
+            "field_type": "tel",
+            "label": "Phone Number",
+            "placeholder": "Your Phone Number*",
+            "field_name": "Phone",
+            "autocomplete": "tel",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": true
+          }
+        },
+        "field_email": {
+          "type": "field",
+          "settings": {
+            "field_type": "email",
+            "label": "Email Address",
+            "placeholder": "Your Email Address*",
+            "field_name": "Email",
+            "autocomplete": "email",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": true
+          }
+        },
+        "field_address": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Shipping Address",
+            "placeholder": "Street, City, State, ZIP*",
+            "field_name": "Shipping address",
+            "autocomplete": "street-address",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false
+          }
+        },
+        "field_insurance": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Insurance Provider",
+            "placeholder": "Insurance plan name*",
+            "field_name": "Insurance provider",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": true
+          }
+        },
+        "field_member": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Insurance Member ID",
+            "placeholder": "Member ID number*",
+            "field_name": "Member ID",
+            "required": true,
+            "show_label": true,
+            "show_number": true,
+            "half_width": true
+          }
+        },
+        "field_doctor": {
+          "type": "field",
+          "settings": {
+            "field_type": "text",
+            "label": "Doctor's Information",
+            "placeholder": "Doctor's Name & Phone Number",
+            "field_name": "Doctor details",
+            "required": false,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false
+          }
+        },
+        "field_due_date": {
+          "type": "field",
+          "settings": {
+            "field_type": "date",
+            "label": "Estimated Due Date",
+            "placeholder": "Estimated Due Date",
+            "field_name": "Due date",
+            "required": false,
+            "show_label": true,
+            "show_number": true,
+            "half_width": true
+          }
+        },
+        "field_prescription": {
+          "type": "field",
+          "settings": {
+            "field_type": "file",
+            "label": "Prescription Upload",
+            "placeholder": "Upload your prescription",
+            "field_name": "Prescription",
+            "required": false,
+            "show_label": true,
+            "show_number": true,
+            "half_width": true,
+            "file_accept": "image/*,.pdf",
+            "file_button_text": "Browse"
+          }
+        },
+        "field_notes": {
+          "type": "field",
+          "settings": {
+            "field_type": "textarea",
+            "label": "Special Requests / Notes",
+            "placeholder": "Anything else we should know? (Optional)",
+            "field_name": "Notes",
+            "required": false,
+            "show_label": true,
+            "show_number": true,
+            "half_width": false,
+            "textarea_rows": 4
+          }
+        }
+      },
+      "block_order": [
+        "field_name",
+        "field_phone",
+        "field_email",
+        "field_address",
+        "field_insurance",
+        "field_member",
+        "field_doctor",
+        "field_due_date",
+        "field_prescription",
+        "field_notes"
+      ],
+      "settings": {
+        "heading": "<p>Your Insurance Hassle, Handled in 24 Hours</p>",
+        "description": "<p>Stop wasting weeks on phone calls. Submit your prescription once — we'll handle insurance, prior authorization, and shipping while you focus on what matters.</p>",
+        "eyebrow": "How It Works",
+        "button_text": "Submit & Get Started",
+        "form_type": "Insurance Hassle (PDP)",
+        "success_message": "Thanks — we'll be in touch within 24 hours.",
+        "footnote": "<p>Your information is secure and only used to verify your insurance benefits.</p>",
+        "show_heading": true,
+        "show_description": true,
+        "show_eyebrow": true,
+        "show_footnote": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "heading_color": "#000000",
+        "description_color": "#000000",
+        "eyebrow_color": "#000000",
+        "footnote_color": "#5a5a5a",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "input_text": "#000000",
+        "input_placeholder": "#999999",
+        "button_bg": "#000000",
+        "button_text_color": "#ffffff",
+        "button_border": "#000000"
+      }
+    },
     "cta_strip_MXURRy": {
       "type": "cta-strip",
       "name": "CTA Strip",
@@ -306,6 +491,7 @@
     "main",
     "step_cards_PexFix",
     "coverage_card_mHVkdQ",
+    "insurance_hassle_pdp",
     "cta_strip_MXURRy",
     "faq_QT6yLL",
     "cta_strip_8AqMdm"
