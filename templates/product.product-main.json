@@ -11,10 +11,164 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "settings": {}
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_root_label": "Shop all",
+        "breadcrumb_root_link": "",
+        "show_as_free": true,
+        "free_label": "Free",
+        "show_rating": true,
+        "fallback_rating": 0,
+        "fallback_rating_count": 0,
+        "rating_word": "stars",
+        "rating_count_word": "reviews",
+        "show_subdescription": true,
+        "subdescription": "Covered by most insurance plans. Quiet, efficient, and built to last through every stage of your journey.",
+        "show_quantity": true,
+        "qty_label": "Qty",
+        "add_to_cart_text": "Add to cart",
+        "sold_out_text": "Sold out",
+        "unavailable_text": "Unavailable",
+        "show_buy_now": true,
+        "buy_now_text": "Buy now",
+        "shipping_note": "Free shipping over $50",
+        "padding_top": 80,
+        "padding_bottom": 48,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "muted_color": "#5a5a5a",
+        "border_color": "#000000",
+        "variant_active_bg": "#000000",
+        "variant_active_text": "#ffffff",
+        "primary_btn_bg": "#000000",
+        "primary_btn_text": "#ffffff",
+        "secondary_btn_bg": "#ffffff",
+        "secondary_btn_text": "#000000"
+      }
+    },
+    "step_cards_PexFix": {
+      "type": "step-cards",
+      "blocks": {
+        "step_Y9VebV": {
+          "type": "step",
+          "settings": {
+            "heading": "Submit your insurance information",
+            "description": "Tell us about your plan and coverage details.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_kw9mxt": {
+          "type": "step",
+          "settings": {
+            "heading": "We verify your coverage",
+            "description": "Our team checks what your insurance will cover.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_LPQyJH": {
+          "type": "step",
+          "settings": {
+            "heading": "Choose your products",
+            "description": "Browse breast pumps, storage bags, and essentials.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_G9gPaT": {
+          "type": "step",
+          "settings": {
+            "heading": "We deliver direct to your door",
+            "description": "Your maternity products arrive when you need them.",
+            "link_text": "Done",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_Y9VebV",
+        "step_kw9mxt",
+        "step_LPQyJH",
+        "step_G9gPaT"
+      ],
+      "name": "Step Cards",
+      "settings": {
+        "eyebrow": "Browse",
+        "heading": "Maternity Products You Need, Covered by Insurance, Delivered to Your Door",
+        "description": "Select from four categories of maternity essentials.",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_description": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "card_fallback_color": "#8a8a8a",
+        "card_overlay_color": "#000000",
+        "card_overlay_opacity": 40,
+        "card_icon_color": "#ffffff",
+        "card_heading_color": "#ffffff",
+        "card_desc_color": "#ffffff",
+        "card_link_color": "#ffffff"
+      }
+    },
+    "coverage_card_mHVkdQ": {
+      "type": "coverage-card",
+      "name": "Coverage Card",
+      "settings": {
+        "eyebrow": "Coverage",
+        "heading": "<p>You may be covered for more products than you know</p>",
+        "description": "<p>Many maternity products are eligible for insurance reimbursement.</p><p>We verify your benefits so there are no surprises — except that you might be covered for more than you knew.</p>",
+        "image_position": "right",
+        "card_eyebrow": "Eligible",
+        "card_heading": "Check your coverage before you buy",
+        "card_description": "<p>Insurance plans vary. Some cover everything. Others cover specific items. Our Maternity Experts check your plan details and show you exactly what you can get at no cost.</p>",
+        "primary_cta_text": "Check coverage",
+        "primary_cta_link": "",
+        "secondary_cta_text": "Verify",
+        "secondary_cta_link": "",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_description": true,
+        "show_image": true,
+        "show_card_eyebrow": true,
+        "show_card_heading": true,
+        "show_card_description": true,
+        "show_primary_cta": true,
+        "show_secondary_cta": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "card_eyebrow_color": "#000000",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "primary_btn_bg": "#ffffff",
+        "primary_btn_text": "#000000",
+        "primary_btn_border": "#000000",
+        "secondary_link_color": "#000000"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "step_cards_PexFix",
+    "coverage_card_mHVkdQ"
   ]
 }
