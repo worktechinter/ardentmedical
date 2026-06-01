@@ -426,7 +426,7 @@
       "name": "Testimonials",
       "settings": {
         "background_color": "#fce4e6",
-        "heading": "<p>Trusted by healthcare providers <em>and</em> moms</p>",
+        "heading": "<h2>Trusted by healthcare </h2><h2>providers <em>and</em> moms</h2>",
         "subheading": "What they're saying",
         "show_heading": true,
         "show_subheading": true,
