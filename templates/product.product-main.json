@@ -365,8 +365,6 @@
         "show_description": true,
         "show_eyebrow": false,
         "show_footnote": true,
-        "show_field_labels": false,
-        "show_field_numbers": false,
         "padding_top": 112,
         "padding_bottom": 112,
         "padding_x": 64,
@@ -384,6 +382,68 @@
         "button_bg": "#000000",
         "button_text_color": "#ffffff",
         "button_border": "#000000"
+      }
+    },
+    "testimonials_NUrp6C": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Qty4QE": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "This pump made going back to work possible.",
+            "author_name": "Sarah Mitchell",
+            "author_role": "Mother of two",
+            "link_text": "Read her story",
+            "link": ""
+          }
+        },
+        "testimonial_aCb9zM": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "",
+            "author_name": "Jessica Chen",
+            "author_role": "New mother",
+            "link_text": "Read her story",
+            "link": ""
+          }
+        },
+        "testimonial_YGhmmb": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "",
+            "author_name": "Maria Rodriguez",
+            "author_role": "Breastfeeding mother",
+            "link_text": "Read her story",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Qty4QE",
+        "testimonial_aCb9zM",
+        "testimonial_YGhmmb"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "background_color": "#fce4e6",
+        "heading": "<p>Trusted by healthcare providers <em>and</em> moms</p>",
+        "subheading": "What they're saying",
+        "show_heading": true,
+        "show_subheading": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_x": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "logo_color": "#5a5a5a",
+        "quote_color": "#000000",
+        "author_name_color": "#000000",
+        "author_role_color": "#000000",
+        "link_color": "#000000"
       }
     },
     "cta_strip_MXURRy": {
@@ -527,6 +587,7 @@
     "step_cards_PexFix",
     "coverage_card_mHVkdQ",
     "insurance_hassle_pdp",
+    "testimonials_NUrp6C",
     "cta_strip_MXURRy",
     "faq_QT6yLL",
     "cta_strip_8AqMdm"
