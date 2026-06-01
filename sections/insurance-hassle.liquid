@@ -19,6 +19,7 @@
   assign margin_top = section.settings.margin_top | default: 0
   assign margin_bottom = section.settings.margin_bottom | default: 0
   assign uid = section.id | replace: '_', '' | downcase
+  assign form_id = 'ins-hassle-form-' | append: uid
 -%}
 
 <section class="ins-hassle-section" style="
@@ -58,7 +59,7 @@
       </p>
     {%- endif -%}
 
-    {%- form 'contact', class: 'ins-hassle-form', enctype: 'multipart/form-data', id: 'ins-hassle-form-' | append: uid -%}
+    {%- form 'contact', class: 'ins-hassle-form', enctype: 'multipart/form-data', id: form_id -%}
 
       {%- if form.posted_successfully? -%}
         <div class="ins-hassle-success" role="status">
