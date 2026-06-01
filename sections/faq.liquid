@@ -24,23 +24,34 @@
   assign margin_top = section.settings.margin_top | default: 0
   assign margin_bottom = section.settings.margin_bottom | default: 0
 
-  assign faq_obj = nil
-  assign dynamic_count = 0
-  if section.settings.use_product_faqs and product != blank
-    assign mf_ns = section.settings.faqs_metafield_namespace | default: 'custom'
-    assign mf_key = section.settings.faqs_metafield_key | default: 'frequently_asked_questions'
-    assign faq_obj = product.metafields[mf_ns][mf_key].value
-    if faq_obj != blank
-      for i in (1..5)
-        assign q_key = 'question' | append: i
-        assign a_key = 'answer' | append: i
-        assign q_val = faq_obj[q_key]
-        assign a_val = faq_obj[a_key]
-        if q_val != blank or a_val != blank
-          assign dynamic_count = dynamic_count | plus: 1
-        endif
-      endfor
+  comment
+    Resolve the product metaobject value. Hardcoded path is the
+    most reliable; bracket-notation fallback supports the optional
+    namespace/key overrides in the schema (when set to something
+    other than the defaults).
+  endcomment
+  assign faq_metaobject = nil
+  if product != blank
+    assign faq_metaobject = product.metafields.custom.frequently_asked_questions.value
+
+    if faq_metaobject == blank and section.settings.faqs_metafield_namespace != blank and section.settings.faqs_metafield_key != blank
+      assign mf_ns = section.settings.faqs_metafield_namespace
+      assign mf_key = section.settings.faqs_metafield_key
+      assign faq_metaobject = product.metafields[mf_ns][mf_key].value
     endif
+  endif
+
+  assign dynamic_count = 0
+  if faq_metaobject != blank
+    for i in (1..5)
+      assign q_key = 'question' | append: i
+      assign a_key = 'answer' | append: i
+      assign q_val = faq_metaobject[q_key]
+      assign a_val = faq_metaobject[a_key]
+      if q_val != blank or a_val != blank
+        assign dynamic_count = dynamic_count | plus: 1
+      endif
+    endfor
   endif
 
   assign use_dynamic = false
@@ -82,16 +93,16 @@
       {%- if use_dynamic -%}
         {%- assign rendered = 0 -%}
         {%- for i in (1..5) -%}
-          {%- assign q_key = 'question' | append: i -%}
-          {%- assign a_key = 'answer' | append: i -%}
-          {%- assign q_val = faq_obj[q_key] -%}
-          {%- assign a_val = faq_obj[a_key] -%}
-          {%- if q_val == blank and a_val == blank -%}{%- continue -%}{%- endif -%}
+          {%- assign question_key = 'question' | append: i -%}
+          {%- assign answer_key = 'answer' | append: i -%}
+          {%- assign question = faq_metaobject[question_key] -%}
+          {%- assign answer = faq_metaobject[answer_key] -%}
+          {%- if question == blank and answer == blank -%}{%- continue -%}{%- endif -%}
           {%- assign d = rendered | times: 80 -%}
           {%- assign rendered = rendered | plus: 1 -%}
           <details class="faq-item" data-reveal data-reveal-delay="{{ d }}"{% if section.settings.first_open_dynamic and rendered == 1 %} open{% endif %}>
             <summary class="faq-question">
-              <span class="faq-question-text">{{ q_val }}</span>
+              <span class="faq-question-text">{{ question }}</span>
               <span class="faq-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -99,7 +110,7 @@
                 </svg>
               </span>
             </summary>
-            <div class="faq-answer">{{ a_val | newline_to_br }}</div>
+            <div class="faq-answer">{{ answer | newline_to_br }}</div>
           </details>
         {%- endfor -%}
       {%- else -%}
@@ -135,11 +146,10 @@
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Find answers about your coverage and what happens next." },
 
     { "type": "header", "content": "FAQ source (product page only)" },
-    { "type": "paragraph", "content": "Pull questions from a product metaobject. Falls back to the static blocks below if no metafield is set on the product, or if outside a product page." },
-    { "type": "checkbox", "id": "use_product_faqs", "label": "Use product FAQ metafield", "default": false },
-    { "type": "text", "id": "faqs_metafield_namespace", "label": "Metafield namespace", "default": "custom" },
-    { "type": "text", "id": "faqs_metafield_key", "label": "Metafield key", "default": "frequently_asked_questions", "info": "Type: reference → metaobject (frequently_asked_questions). The metaobject must have fields question1..question5 and answer1..answer5." },
-    { "type": "checkbox", "id": "first_open_dynamic", "label": "Open the first question by default", "default": true },
+    { "type": "paragraph", "content": "On product pages this section auto-pulls from product.metafields.custom.frequently_asked_questions if that metaobject is set. Otherwise the static blocks below render. Override the namespace/key only if your metaobject lives somewhere other than custom.frequently_asked_questions." },
+    { "type": "text", "id": "faqs_metafield_namespace", "label": "Override metafield namespace", "info": "Leave blank to use the default custom.frequently_asked_questions path." },
+    { "type": "text", "id": "faqs_metafield_key", "label": "Override metafield key", "info": "Leave blank to use the default. The metaobject must have fields question1..question5 and answer1..answer5." },
+    { "type": "checkbox", "id": "first_open_dynamic", "label": "Open the first question by default (dynamic mode)", "default": true },
 
     { "type": "header", "content": "Show / hide elements" },
     { "type": "checkbox", "id": "show_heading", "label": "Show heading", "default": true },
