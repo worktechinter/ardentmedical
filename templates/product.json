@@ -1,8 +1,587 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-product"
+      "type": "main-product",
+      "blocks": {
+        "accordion_details": {
+          "type": "accordion",
+          "settings": {
+            "title": "Details",
+            "content": "<p>This pump delivers consistent suction with minimal noise, making it ideal for work or home use. It's lightweight enough to carry but powerful enough to get the job done efficiently. Compatible with standard bottles and storage bags.</p>",
+            "open_by_default": true,
+            "metafield_namespace": "custom",
+            "metafield_key": "detail",
+            "heading_fields": "",
+            "description_fields": ""
+          }
+        },
+        "accordion_shipping": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping",
+            "content": "<p>We ship within five to seven business days to most addresses in the continental United States. Tracking information is sent automatically once your order leaves our warehouse. Free shipping applies to orders over fifty dollars.</p>",
+            "open_by_default": false,
+            "metafield_namespace": "custom",
+            "metafield_key": "shipping_and_returns",
+            "heading_fields": "",
+            "description_fields": ""
+          }
+        },
+        "accordion_returns": {
+          "type": "accordion",
+          "settings": {
+            "title": "Returns",
+            "content": "<p>Unopened items can be returned within thirty days for a full refund. We'll email you a prepaid shipping label so there's no cost to you. Contact our team with your order number to start the process.</p>",
+            "open_by_default": false,
+            "metafield_namespace": "custom",
+            "metafield_key": "shipping_and_returns",
+            "heading_fields": "",
+            "description_fields": ""
+          }
+        }
+      },
+      "block_order": [
+        "accordion_details",
+        "accordion_shipping",
+        "accordion_returns"
+      ],
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_root_label": "Shop all",
+        "breadcrumb_root_link": "",
+        "show_as_free": true,
+        "free_label": "Free",
+        "show_rating": true,
+        "fallback_rating": 0,
+        "fallback_rating_count": 0,
+        "rating_word": "stars",
+        "rating_count_word": "reviews",
+        "show_subdescription": true,
+        "subdescription": "Covered by most insurance plans. Quiet, efficient, and built to last through every stage of your journey.",
+        "show_quantity": true,
+        "qty_label": "Qty",
+        "add_to_cart_text": "Add to cart",
+        "sold_out_text": "Sold out",
+        "unavailable_text": "Unavailable",
+        "show_buy_now": true,
+        "buy_now_text": "Buy now",
+        "shipping_note": "Free shipping over $50",
+        "padding_top": 80,
+        "padding_bottom": 48,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "muted_color": "#5a5a5a",
+        "border_color": "#000000",
+        "variant_active_bg": "#000000",
+        "variant_active_text": "#ffffff",
+        "primary_btn_bg": "#000000",
+        "primary_btn_text": "#ffffff",
+        "secondary_btn_bg": "#ffffff",
+        "secondary_btn_text": "#000000"
+      }
+    },
+    "step_cards_PexFix": {
+      "type": "step-cards",
+      "blocks": {
+        "step_Y9VebV": {
+          "type": "step",
+          "settings": {
+            "heading": "Submit your insurance information",
+            "description": "Tell us about your plan and coverage details.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_kw9mxt": {
+          "type": "step",
+          "settings": {
+            "heading": "We verify your coverage",
+            "description": "Our team checks what your insurance will cover.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_LPQyJH": {
+          "type": "step",
+          "settings": {
+            "heading": "Choose your products",
+            "description": "Browse breast pumps, storage bags, and essentials.",
+            "link_text": "Next",
+            "link": ""
+          }
+        },
+        "step_G9gPaT": {
+          "type": "step",
+          "settings": {
+            "heading": "We deliver direct to your door",
+            "description": "Your maternity products arrive when you need them.",
+            "link_text": "Done",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_Y9VebV",
+        "step_kw9mxt",
+        "step_LPQyJH",
+        "step_G9gPaT"
+      ],
+      "name": "Step Cards",
+      "settings": {
+        "eyebrow": "Browse",
+        "heading": "Maternity Products You Need, Covered by Insurance, Delivered to Your Door",
+        "description": "Select from four categories of maternity essentials.",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_description": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#fce4e6",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "card_fallback_color": "#8a8a8a",
+        "card_overlay_color": "#000000",
+        "card_overlay_opacity": 40,
+        "card_icon_color": "#ffffff",
+        "card_heading_color": "#ffffff",
+        "card_desc_color": "#ffffff",
+        "card_link_color": "#ffffff"
+      }
+    },
+    "insurance_form_K7kRbY": {
+      "type": "insurance-form",
+      "name": "Insurance Form",
+      "settings": {
+        "heading": "<p>Less insurance hassle. </p><p>More baby time.</p>",
+        "description": "<p>Enter your details and one of our team will check what your plan covers. You'll receive a personalized email within 24 hours detailing <strong>all the products you're covered for</strong>.</p>",
+        "button_text": "Verify coverage",
+        "success_message": "Thanks — we'll be in touch within 24 hours.",
+        "footnote": "<p>Your information is secure and used only for insurance verification purposes.</p>",
+        "show_heading": true,
+        "show_description": true,
+        "show_footnote": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "footnote_color": "#000000",
+        "input_bg": "#ffffff",
+        "input_border": "#000000",
+        "input_text": "#000000",
+        "input_placeholder_color": "#5a5a5a",
+        "button_bg": "#000000",
+        "button_text_color": "#ffffff",
+        "button_border": "#000000"
+      }
+    },
+    "testimonials_NUrp6C": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Qty4QE": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "This pump made going back to work possible.",
+            "author_name": "Sarah Mitchell",
+            "author_role": "Mother of two",
+            "link_text": "Read her story",
+            "link": ""
+          }
+        },
+        "testimonial_aCb9zM": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "",
+            "author_name": "Jessica Chen",
+            "author_role": "New mother",
+            "link_text": "Read her story",
+            "link": ""
+          }
+        },
+        "testimonial_YGhmmb": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "",
+            "author_name": "Maria Rodriguez",
+            "author_role": "Breastfeeding mother",
+            "link_text": "Read her story",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Qty4QE",
+        "testimonial_aCb9zM",
+        "testimonial_YGhmmb"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "background_color": "#fce4e6",
+        "heading": "<h2>Trusted by healthcare </h2><h2>providers <em>and</em> moms</h2>",
+        "subheading": "What they're saying",
+        "use_product_reviews": true,
+        "reviews_metafield_namespace": "custom",
+        "reviews_metafield_key": "customer_reviews",
+        "show_heading": true,
+        "show_subheading": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_x": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "logo_color": "#5a5a5a",
+        "quote_color": "#000000",
+        "author_name_color": "#000000",
+        "author_role_color": "#000000",
+        "link_color": "#000000"
+      }
+    },
+    "feature_spotlight_nNepxV": {
+      "type": "feature-spotlight",
+      "blocks": {
+        "feature_f94eYB": {
+          "type": "feature",
+          "settings": {
+            "text": "Consistent suction that gets results"
+          }
+        },
+        "feature_6xqEKp": {
+          "type": "feature",
+          "settings": {
+            "text": "Works with standard bottles and bags"
+          }
+        },
+        "feature_9nLadY": {
+          "type": "feature",
+          "settings": {
+            "text": "Lightweight and easy to carry anywhere"
+          }
+        }
+      },
+      "block_order": [
+        "feature_f94eYB",
+        "feature_6xqEKp",
+        "feature_9nLadY"
+      ],
+      "name": "Feature Spotlight",
+      "settings": {
+        "eyebrow": "Engineered",
+        "heading": "<p>Built to work hard and last long</p>",
+        "description": "<p>This pump was made for the demands of real life. Quiet enough for the office, strong enough for every session, and built to keep working through it all.</p>",
+        "image": "shopify://shop_images/eufye20_lifstlye.jpg",
+        "primary_cta_text": "Learn more",
+        "primary_cta_link": "",
+        "secondary_cta_text": "Specs",
+        "secondary_cta_link": "",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_description": true,
+        "show_features": true,
+        "show_primary_cta": true,
+        "show_secondary_cta": true,
+        "show_image": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "feature_color": "#000000",
+        "icon_color": "#000000",
+        "image_bg": "#e6e6e6",
+        "primary_btn_bg": "#ffffff",
+        "primary_btn_text": "#000000",
+        "primary_btn_border": "#000000",
+        "secondary_link_color": "#000000"
+      }
+    },
+    "coverage_card_mHVkdQ": {
+      "type": "coverage-card",
+      "name": "Coverage Card",
+      "settings": {
+        "eyebrow": "Coverage",
+        "heading": "<p>You may be covered for more products than you know</p>",
+        "description": "<p>Many maternity products are eligible for insurance reimbursement.</p><p>We verify your benefits so there are no surprises — except that you might be covered for more than you knew.</p>",
+        "image": "shopify://shop_images/Momcozy_S12.jpg",
+        "image_position": "right",
+        "card_eyebrow": "Insurance",
+        "card_heading": "Your insurance likely covers this",
+        "card_description": "<p>Most plans include breast pumps as preventive care. We verify what you're eligible for before you order, so there are no surprises.</p>",
+        "primary_cta_text": "Verify",
+        "primary_cta_link": "",
+        "secondary_cta_text": "coverage",
+        "secondary_cta_link": "",
+        "show_eyebrow": false,
+        "show_heading": false,
+        "show_description": false,
+        "show_image": true,
+        "show_card_eyebrow": true,
+        "show_card_heading": true,
+        "show_card_description": true,
+        "show_primary_cta": true,
+        "show_secondary_cta": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#ffffff",
+        "card_eyebrow_color": "#000000",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "primary_btn_bg": "#ffffff",
+        "primary_btn_text": "#000000",
+        "primary_btn_border": "#000000",
+        "secondary_link_color": "#000000"
+      }
+    },
+    "image_features_r4J8NH": {
+      "type": "image-features",
+      "blocks": {
+        "feature_KHcdPW": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/volume_off.png",
+            "heading": "Quiet operation",
+            "description": "Runs at a low volume so you can pump at work, home, or anywhere without drawing attention.",
+            "link_text": "Details",
+            "link": ""
+          }
+        },
+        "feature_aUVwea": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/details.png",
+            "heading": "Durable design",
+            "description": "Built to handle daily use without losing power or breaking down. This pump is made to last through every stage.",
+            "link_text": "Details",
+            "link": ""
+          }
+        },
+        "feature_QDTKL8": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/hardware.png",
+            "heading": "Easy to use",
+            "description": "Simple controls and straightforward assembly mean you spend less time figuring it out and more time with your baby.",
+            "link_text": "Details",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_KHcdPW",
+        "feature_aUVwea",
+        "feature_QDTKL8"
+      ],
+      "name": "Image Features",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "description": "",
+        "image": "shopify://shop_images/M6_Scene_1.jpg",
+        "image_position": "left",
+        "show_eyebrow": false,
+        "show_heading": false,
+        "show_description": false,
+        "show_image": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "image_bg": "#e6e6e6",
+        "icon_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "link_color": "#000000"
+      }
+    },
+    "cta_strip_MXURRy": {
+      "type": "cta-strip",
+      "name": "CTA Strip",
+      "settings": {
+        "heading": "<p>Ready for what's next?</p>",
+        "description": "<p>Explore more products covered by your insurance or verify your benefits today.</p>",
+        "show_heading": true,
+        "show_description": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#000000",
+        "overlay_opacity": 40,
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "show_primary_cta": true,
+        "primary_cta_text": "Shop",
+        "primary_cta_link": "",
+        "primary_btn_bg": "#e14e6b",
+        "primary_btn_text": "#ffffff",
+        "primary_btn_border": "#000000",
+        "show_secondary_cta": true,
+        "secondary_cta_text": "Verify",
+        "secondary_cta_link": "",
+        "secondary_btn_bg": "",
+        "secondary_btn_text": "#ffffff",
+        "secondary_btn_border": "#ffffff"
+      }
+    },
+    "faq_QT6yLL": {
+      "type": "faq",
+      "blocks": {
+        "question_qnTEjp": {
+          "type": "question",
+          "settings": {
+            "question": "What does insurance cover?",
+            "answer": "<p>Most plans cover breast pumps, storage bags, and postpartum essentials. We verify your specific benefits once you submit your information.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_6zCECG": {
+          "type": "question",
+          "settings": {
+            "question": "How long does verification take?",
+            "answer": "<p>We typically verify coverage within 24 hours. You'll receive an email with your results and next steps.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_34gcUn": {
+          "type": "question",
+          "settings": {
+            "question": "Is my information private?",
+            "answer": "<p>Yes. We protect your data and use it only to verify your insurance coverage. Your privacy matters to us.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_4ebGbg": {
+          "type": "question",
+          "settings": {
+            "question": "What if I'm not covered?",
+            "answer": "<p>We'll let you know what your plan includes and help you explore options.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_BEw3X8": {
+          "type": "question",
+          "settings": {
+            "question": "Can I shop before verification?",
+            "answer": "<p>You can browse and buy our products anytime without insurance coverage.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "question_qnTEjp",
+        "question_6zCECG",
+        "question_34gcUn",
+        "question_4ebGbg",
+        "question_BEw3X8"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "heading": "Questions",
+        "subheading": "Find answers about your coverage and what happens next.",
+        "use_product_faqs": true,
+        "faqs_metafield_namespace": "custom",
+        "faqs_metafield_key": "frequently_asked_questions",
+        "first_open_dynamic": true,
+        "show_heading": true,
+        "show_subheading": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "heading_color": "#000000",
+        "sub_color": "#000000",
+        "item_bg": "#ffffff",
+        "item_bg_hover": "#fafafa",
+        "item_border": "#000000",
+        "question_color": "#000000",
+        "answer_color": "#000000",
+        "icon_color": "#000000"
+      }
+    },
+    "cta_strip_8AqMdm": {
+      "type": "cta-strip",
+      "name": "CTA Strip",
+      "settings": {
+        "heading": "<p>Still need help?</p>",
+        "description": "<p>Get in touch with our team.</p>",
+        "show_heading": true,
+        "show_description": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#000000",
+        "overlay_opacity": 40,
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "show_primary_cta": false,
+        "primary_cta_text": "Check Coverage",
+        "primary_cta_link": "",
+        "primary_btn_bg": "#e14e6b",
+        "primary_btn_text": "#ffffff",
+        "primary_btn_border": "#000000",
+        "show_secondary_cta": true,
+        "secondary_cta_text": "Contact Us",
+        "secondary_cta_link": "",
+        "secondary_btn_bg": "",
+        "secondary_btn_text": "#ffffff",
+        "secondary_btn_border": "#ffffff"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "step_cards_PexFix",
+    "insurance_form_K7kRbY",
+    "testimonials_NUrp6C",
+    "feature_spotlight_nNepxV",
+    "coverage_card_mHVkdQ",
+    "image_features_r4J8NH",
+    "cta_strip_MXURRy",
+    "faq_QT6yLL",
+    "cta_strip_8AqMdm"
+  ]
 }
