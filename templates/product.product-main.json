@@ -141,7 +141,7 @@
       "name": "Step Cards",
       "settings": {
         "eyebrow": "Browse",
-        "heading": "Maternity Products You Need, <br>Covered by Insurance, <br>Delivered to Your Door",
+        "heading": "Maternity Products You Need, Covered by Insurance, Delivered to Your Door",
         "description": "Select from four categories of maternity essentials.",
         "show_eyebrow": true,
         "show_heading": true,
@@ -151,7 +151,7 @@
         "padding_x": 64,
         "margin_top": 0,
         "margin_bottom": 0,
-        "background_color": "#ffffff",
+        "background_color": "#fce4e6",
         "eyebrow_color": "#000000",
         "heading_color": "#000000",
         "sub_color": "#000000",
@@ -162,109 +162,6 @@
         "card_heading_color": "#ffffff",
         "card_desc_color": "#ffffff",
         "card_link_color": "#ffffff"
-      }
-    },
-    "coverage_card_mHVkdQ": {
-      "type": "coverage-card",
-      "name": "Coverage Card",
-      "settings": {
-        "eyebrow": "Coverage",
-        "heading": "<p>You may be covered for more products than you know</p>",
-        "description": "<p>Many maternity products are eligible for insurance reimbursement.</p><p>We verify your benefits so there are no surprises — except that you might be covered for more than you knew.</p>",
-        "image": "shopify://shop_images/Momcozy_S12.jpg",
-        "image_position": "right",
-        "card_eyebrow": "Insurance",
-        "card_heading": "Your insurance likely covers this",
-        "card_description": "<p>Most plans include breast pumps as preventive care. We verify what you're eligible for before you order, so there are no surprises.</p>",
-        "primary_cta_text": "Verify",
-        "primary_cta_link": "",
-        "secondary_cta_text": "coverage",
-        "secondary_cta_link": "",
-        "show_eyebrow": false,
-        "show_heading": false,
-        "show_description": false,
-        "show_image": true,
-        "show_card_eyebrow": true,
-        "show_card_heading": true,
-        "show_card_description": true,
-        "show_primary_cta": true,
-        "show_secondary_cta": true,
-        "padding_top": 112,
-        "padding_bottom": 112,
-        "padding_x": 64,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "background_color": "#ffffff",
-        "eyebrow_color": "#000000",
-        "heading_color": "#000000",
-        "text_color": "#000000",
-        "card_bg": "#ffffff",
-        "card_border": "#ffffff",
-        "card_eyebrow_color": "#000000",
-        "card_heading_color": "#000000",
-        "card_text_color": "#000000",
-        "primary_btn_bg": "#ffffff",
-        "primary_btn_text": "#000000",
-        "primary_btn_border": "#000000",
-        "secondary_link_color": "#000000"
-      }
-    },
-    "image_features_pdp": {
-      "type": "image-features",
-      "name": "Image Features",
-      "blocks": {
-        "feat_quiet": {
-          "type": "feature",
-          "settings": {
-            "heading": "Quiet operation",
-            "description": "Runs at a low volume so you can pump at work, home, or anywhere without drawing attention.",
-            "link_text": "Details",
-            "link": ""
-          }
-        },
-        "feat_durable": {
-          "type": "feature",
-          "settings": {
-            "heading": "Durable design",
-            "description": "Built to handle daily use without losing power or breaking down. This pump is made to last through every stage.",
-            "link_text": "Details",
-            "link": ""
-          }
-        },
-        "feat_easy": {
-          "type": "feature",
-          "settings": {
-            "heading": "Easy to use",
-            "description": "Simple controls and straightforward assembly mean you spend less time figuring it out and more time with your baby.",
-            "link_text": "Details",
-            "link": ""
-          }
-        }
-      },
-      "block_order": ["feat_quiet", "feat_durable", "feat_easy"],
-      "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "description": "",
-        "image_position": "left",
-        "show_eyebrow": false,
-        "show_heading": false,
-        "show_description": false,
-        "show_image": true,
-        "padding_top": 112,
-        "padding_bottom": 112,
-        "padding_x": 64,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "background_color": "#ffffff",
-        "eyebrow_color": "#000000",
-        "heading_color": "#000000",
-        "text_color": "#000000",
-        "image_bg": "#e6e6e6",
-        "icon_color": "#000000",
-        "feature_heading_color": "#000000",
-        "feature_text_color": "#000000",
-        "link_color": "#000000"
       }
     },
     "insurance_form_K7kRbY": {
@@ -360,6 +257,51 @@
         "author_name_color": "#000000",
         "author_role_color": "#000000",
         "link_color": "#000000"
+      }
+    },
+    "coverage_card_mHVkdQ": {
+      "type": "coverage-card",
+      "name": "Coverage Card",
+      "settings": {
+        "eyebrow": "Coverage",
+        "heading": "<p>You may be covered for more products than you know</p>",
+        "description": "<p>Many maternity products are eligible for insurance reimbursement.</p><p>We verify your benefits so there are no surprises — except that you might be covered for more than you knew.</p>",
+        "image": "shopify://shop_images/Momcozy_S12.jpg",
+        "image_position": "right",
+        "card_eyebrow": "Insurance",
+        "card_heading": "Your insurance likely covers this",
+        "card_description": "<p>Most plans include breast pumps as preventive care. We verify what you're eligible for before you order, so there are no surprises.</p>",
+        "primary_cta_text": "Verify",
+        "primary_cta_link": "",
+        "secondary_cta_text": "coverage",
+        "secondary_cta_link": "",
+        "show_eyebrow": false,
+        "show_heading": false,
+        "show_description": false,
+        "show_image": true,
+        "show_card_eyebrow": true,
+        "show_card_heading": true,
+        "show_card_description": true,
+        "show_primary_cta": true,
+        "show_secondary_cta": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#ffffff",
+        "card_eyebrow_color": "#000000",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "primary_btn_bg": "#ffffff",
+        "primary_btn_text": "#000000",
+        "primary_btn_border": "#000000",
+        "secondary_link_color": "#000000"
       }
     },
     "feature_spotlight_nNepxV": {
@@ -567,11 +509,10 @@
   "order": [
     "main",
     "step_cards_PexFix",
-    "coverage_card_mHVkdQ",
     "insurance_form_K7kRbY",
     "testimonials_NUrp6C",
+    "coverage_card_mHVkdQ",
     "feature_spotlight_nNepxV",
-    "image_features_pdp",
     "cta_strip_MXURRy",
     "faq_QT6yLL",
     "cta_strip_8AqMdm"
