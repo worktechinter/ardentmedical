@@ -1,0 +1,202 @@
+{% comment %}
+  Section: Feature Spotlight
+  File: sections/feature-spotlight.liquid
+
+  Two-column intro (eyebrow + heading on the left, description + feature
+  bullets + CTAs on the right), followed by a full-width spotlight image.
+
+  Every element is theme-editor controllable: visibility toggles, spacing,
+  colors, CTAs, and a repeatable feature block with an optional icon image
+  (defaults to a small check mark when no icon is provided).
+{% endcomment %}
+
+{%- liquid
+  assign pad_top = section.settings.padding_top | default: 112
+  assign pad_bottom = section.settings.padding_bottom | default: 112
+  assign pad_x = section.settings.padding_x | default: 64
+  assign margin_top = section.settings.margin_top | default: 0
+  assign margin_bottom = section.settings.margin_bottom | default: 0
+-%}
+
+<section class="fs-section" style="
+  --fs-bg: {{ section.settings.background_color | default: '#ffffff' }};
+  --fs-eyebrow-color: {{ section.settings.eyebrow_color | default: '#000000' }};
+  --fs-heading-color: {{ section.settings.heading_color | default: '#000000' }};
+  --fs-text-color: {{ section.settings.text_color | default: '#000000' }};
+  --fs-feature-color: {{ section.settings.feature_color | default: '#000000' }};
+  --fs-icon-color: {{ section.settings.icon_color | default: '#000000' }};
+  --fs-image-bg: {{ section.settings.image_bg | default: '#e6e6e6' }};
+  --fs-primary-bg: {{ section.settings.primary_btn_bg | default: '#ffffff' }};
+  --fs-primary-text: {{ section.settings.primary_btn_text | default: '#000000' }};
+  --fs-primary-border: {{ section.settings.primary_btn_border | default: '#000000' }};
+  --fs-secondary-color: {{ section.settings.secondary_link_color | default: '#000000' }};
+  background: var(--fs-bg, #fff);
+  padding: {{ pad_top }}px {{ pad_x }}px {{ pad_bottom }}px;
+  margin: {{ margin_top }}px 0 {{ margin_bottom }}px;
+">
+  <div class="fs-container">
+
+    <div class="fs-intro">
+
+      <div class="fs-intro-col fs-intro-col--title">
+        {%- if section.settings.show_eyebrow and section.settings.eyebrow != blank -%}
+          <p class="fs-eyebrow" data-reveal>{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.show_heading and section.settings.heading != blank -%}
+          <h2 class="fs-heading" data-reveal data-reveal-delay="80">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+
+      <div class="fs-intro-col fs-intro-col--body">
+        {%- if section.settings.show_description and section.settings.description != blank -%}
+          <div class="fs-desc" data-reveal data-reveal-delay="120">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_features and section.blocks.size > 0 -%}
+          <ul class="fs-features">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'feature' -%}
+                {%- assign d = forloop.index0 | times: 80 | plus: 200 -%}
+                <li class="fs-feature" data-reveal data-reveal-delay="{{ d }}" {{ block.shopify_attributes }}>
+                  <span class="fs-feature-icon" aria-hidden="true">
+                    {%- if block.settings.icon != blank -%}
+                      {{ block.settings.icon | image_url: width: 48 | image_tag: alt: '', loading: 'lazy' }}
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 21h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                    {%- endif -%}
+                  </span>
+                  <span class="fs-feature-text">{{ block.settings.text }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.show_primary_cta or section.settings.show_secondary_cta -%}
+          <div class="fs-actions" data-reveal data-reveal-delay="320">
+            {%- if section.settings.show_primary_cta and section.settings.primary_cta_text != blank -%}
+              <a href="{{ section.settings.primary_cta_link | default: '#' }}" class="fs-btn fs-btn-primary">
+                {{ section.settings.primary_cta_text }}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.show_secondary_cta and section.settings.secondary_cta_text != blank -%}
+              <a href="{{ section.settings.secondary_cta_link | default: '#' }}" class="fs-link">
+                <span>{{ section.settings.secondary_cta_text }}</span>
+                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M0.877 0.5C0.978 0.5 1.055 0.53 1.133 0.608L6.077 5.553C6.131 5.607 6.156 5.649 6.168 5.677V5.678C6.183 5.713 6.191 5.753 6.191 5.802C6.191 5.85 6.183 5.89 6.168 5.926V5.927C6.156 5.955 6.131 5.997 6.077 6.051L1.108 11.02C1.031 11.097 0.963 11.119 0.883 11.116C0.789 11.113 0.708 11.081 0.622 10.995C0.544 10.917 0.513 10.84 0.513 10.739C0.513 10.638 0.544 10.561 0.622 10.483L5.304 5.802L0.597 1.095C0.519 1.017 0.497 0.951 0.5 0.87C0.503 0.776 0.536 0.694 0.622 0.608C0.7 0.531 0.776 0.5 0.877 0.5Z" fill="currentColor" stroke="currentColor"/>
+                </svg>
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    {%- if section.settings.show_image -%}
+      <div class="fs-image" data-reveal data-reveal-delay="200">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1800 | image_tag:
+            alt: section.settings.heading | strip_html,
+            loading: 'lazy',
+            class: 'fs-image-img',
+            widths: '600, 900, 1200, 1600, 1800',
+            sizes: '(min-width: 1024px) 1200px, 100vw'
+          }}
+        {%- else -%}
+          <div class="fs-image-placeholder" aria-hidden="true">
+            <svg viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="68" height="52" rx="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="28" cy="26" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 50 L28 32 L46 46 L60 36 L74 50" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Spotlight",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Intro" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Engineered" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Built to work hard and last long</p>" },
+    { "type": "richtext", "id": "description", "label": "Description", "default": "<p>This pump was made for the demands of real life. Quiet enough for the office, strong enough for every session, and built to keep working through it all.</p>" },
+
+    { "type": "header", "content": "Spotlight image" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+
+    { "type": "header", "content": "Primary CTA" },
+    { "type": "text", "id": "primary_cta_text", "label": "Primary button text", "default": "Learn more" },
+    { "type": "url", "id": "primary_cta_link", "label": "Primary button link" },
+
+    { "type": "header", "content": "Secondary CTA" },
+    { "type": "text", "id": "secondary_cta_text", "label": "Secondary link text", "default": "Specs" },
+    { "type": "url", "id": "secondary_cta_link", "label": "Secondary link URL" },
+
+    { "type": "header", "content": "Show / hide elements" },
+    { "type": "checkbox", "id": "show_eyebrow", "label": "Show eyebrow", "default": true },
+    { "type": "checkbox", "id": "show_heading", "label": "Show heading", "default": true },
+    { "type": "checkbox", "id": "show_description", "label": "Show description", "default": true },
+    { "type": "checkbox", "id": "show_features", "label": "Show feature list", "default": true },
+    { "type": "checkbox", "id": "show_primary_cta", "label": "Show primary button", "default": true },
+    { "type": "checkbox", "id": "show_secondary_cta", "label": "Show secondary link", "default": true },
+    { "type": "checkbox", "id": "show_image", "label": "Show image", "default": true },
+
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 112 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 112 },
+    { "type": "range", "id": "padding_x", "label": "Padding left / right", "min": 0, "max": 96, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Section colors" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#000000" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#000000" },
+    { "type": "color", "id": "text_color", "label": "Description", "default": "#000000" },
+    { "type": "color", "id": "feature_color", "label": "Feature text", "default": "#000000" },
+    { "type": "color", "id": "icon_color", "label": "Feature icon (fallback SVG)", "default": "#000000" },
+    { "type": "color", "id": "image_bg", "label": "Image placeholder background", "default": "#e6e6e6" },
+
+    { "type": "header", "content": "Primary button colors" },
+    { "type": "color", "id": "primary_btn_bg", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "primary_btn_text", "label": "Text", "default": "#000000" },
+    { "type": "color", "id": "primary_btn_border", "label": "Border", "default": "#000000" },
+
+    { "type": "header", "content": "Secondary link" },
+    { "type": "color", "id": "secondary_link_color", "label": "Color", "default": "#000000" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon (optional)" },
+        { "type": "text", "id": "text", "label": "Feature text", "default": "Feature description" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Feature Spotlight",
+      "blocks": [
+        { "type": "feature", "settings": { "text": "Consistent suction that gets results" } },
+        { "type": "feature", "settings": { "text": "Works with standard bottles and bags" } },
+        { "type": "feature", "settings": { "text": "Lightweight and easy to carry anywhere" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -209,6 +209,48 @@
         "secondary_link_color": "#000000"
       }
     },
+    "feature_spotlight_pdp": {
+      "type": "feature-spotlight",
+      "name": "Feature Spotlight",
+      "blocks": {
+        "feat_1": { "type": "feature", "settings": { "text": "Consistent suction that gets results" } },
+        "feat_2": { "type": "feature", "settings": { "text": "Works with standard bottles and bags" } },
+        "feat_3": { "type": "feature", "settings": { "text": "Lightweight and easy to carry anywhere" } }
+      },
+      "block_order": ["feat_1", "feat_2", "feat_3"],
+      "settings": {
+        "eyebrow": "Engineered",
+        "heading": "<p>Built to work hard and last long</p>",
+        "description": "<p>This pump was made for the demands of real life. Quiet enough for the office, strong enough for every session, and built to keep working through it all.</p>",
+        "primary_cta_text": "Learn more",
+        "primary_cta_link": "",
+        "secondary_cta_text": "Specs",
+        "secondary_cta_link": "",
+        "show_eyebrow": true,
+        "show_heading": true,
+        "show_description": true,
+        "show_features": true,
+        "show_primary_cta": true,
+        "show_secondary_cta": true,
+        "show_image": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "padding_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#000000",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "feature_color": "#000000",
+        "icon_color": "#000000",
+        "image_bg": "#e6e6e6",
+        "primary_btn_bg": "#ffffff",
+        "primary_btn_text": "#000000",
+        "primary_btn_border": "#000000",
+        "secondary_link_color": "#000000"
+      }
+    },
     "insurance_form_K7kRbY": {
       "type": "insurance-form",
       "name": "Insurance Form",
@@ -667,6 +709,7 @@
   },
   "order": [
     "main",
+    "feature_spotlight_pdp",
     "step_cards_PexFix",
     "coverage_card_mHVkdQ",
     "insurance_form_K7kRbY",

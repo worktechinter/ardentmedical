@@ -4051,6 +4051,12 @@ a.lg-item:hover { opacity: 0.65; }
     .ins-hassle-section { padding: 80px 32px; }
     .ins-hassle-heading { font-size: 40px; }
 
+    /* Feature spotlight */
+    .fs-section { padding: 80px 32px; }
+    .fs-container { gap: 48px; }
+    .fs-intro { gap: 40px; }
+    .fs-heading { font-size: 40px; }
+
     /* FAQ */
     .faq-section { padding: 80px 32px; }
     .faq-container { gap: 56px; }
@@ -4191,6 +4197,14 @@ a.lg-item:hover { opacity: 0.65; }
     .ins-hassle-container { gap: 20px; }
     .ins-hassle-eyebrow { margin-top: 16px; }
     .ins-hassle-grid { gap: 12px; }
+
+    /* Feature spotlight → stack to single column */
+    .fs-section { padding: 60px 20px; }
+    .fs-container { gap: 32px; }
+    .fs-intro { grid-template-columns: 1fr; gap: 20px; }
+    .fs-heading { font-size: 30px; }
+    .fs-image { aspect-ratio: 4 / 3; min-height: 240px; }
+    .fs-actions { gap: 16px; }
 
     /* FAQ */
     .faq-section { padding: 60px 20px; }
@@ -4336,6 +4350,14 @@ a.lg-item:hover { opacity: 0.65; }
     .ins-hassle-heading { font-size: 24px; }
     .ins-hassle-card { padding: 12px 14px; }
     .ins-hassle-submit { padding: 14px 20px; font-size: 15px; }
+
+    /* Feature spotlight */
+    .fs-section { padding: 48px 16px; }
+    .fs-heading { font-size: 24px; }
+    .fs-desc { font-size: 15px; }
+    .fs-feature { font-size: 14px; gap: 12px; }
+    .fs-actions { width: 100%; }
+    .fs-btn { width: 100%; }
 
     /* FAQ */
     .faq-section { padding: 48px 16px; }
@@ -5097,6 +5119,188 @@ a.lg-item:hover { opacity: 0.65; }
 .pdp-accordion-subbody { font: inherit; color: inherit; }
 .pdp-accordion-subbody > *:last-child { margin-bottom: 0; }
 
+/* =========================================================
+   FEATURE SPOTLIGHT
+   (two-column intro + full-width image below)
+========================================================= */
+.fs-section {
+    background: var(--fs-bg, #fff);
+    padding: 112px 64px;
+}
+
+.fs-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.fs-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.fs-intro-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.fs-intro-col--body { gap: 24px; }
+
+.fs-eyebrow {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--fs-eyebrow-color, #000);
+}
+
+.fs-heading {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--fs-heading-color, #000);
+}
+
+.fs-heading p { margin: 0; font: inherit; color: inherit; line-height: inherit; }
+
+.fs-desc {
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--fs-text-color, #000);
+}
+
+.fs-desc p { margin: 0 0 10px; font: inherit; color: inherit; line-height: inherit; }
+.fs-desc p:last-child { margin-bottom: 0; }
+.fs-desc strong { font-weight: 700; }
+
+.fs-features {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fs-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--fs-feature-color, #000);
+}
+
+.fs-feature-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fs-icon-color, #000);
+}
+
+.fs-feature-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.fs-feature-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fs-feature-text { flex: 1; min-width: 0; }
+
+.fs-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.fs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-decoration: none;
+    border: 1px solid;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.fs-btn-primary {
+    background: var(--fs-primary-bg, #fff);
+    color: var(--fs-primary-text, #000);
+    border-color: var(--fs-primary-border, #000);
+}
+
+.fs-btn-primary:hover {
+    background: var(--color-primary, #e14e6b);
+    color: #fff;
+    border-color: var(--color-primary, #e14e6b);
+}
+
+.fs-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--fs-secondary-color, #000);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.fs-link svg { transition: transform 0.2s ease; }
+.fs-link:hover { color: var(--color-primary, #e14e6b); }
+.fs-link:hover svg { transform: translateX(2px); }
+
+.fs-image {
+    width: 100%;
+    background: var(--fs-image-bg, #e6e6e6);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    aspect-ratio: 16 / 9;
+}
+
+.fs-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fs-image-placeholder {
+    width: 96px;
+    height: 80px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.fs-image-placeholder svg { width: 100%; height: 100%; display: block; }
+
 /* ---- Gallery ---- */
 .pdp-gallery {
     flex: 1 1 0;
@@ -5254,6 +5458,7 @@ input, select, textarea, button {
     .faq-section,
     .ins-form-section,
     .ins-hassle-section,
+    .fs-section,
     .coverage-section,
     .step-cards,
     .shop-section,
@@ -5291,6 +5496,7 @@ input, select, textarea, button {
     .faq-section,
     .ins-form-section,
     .ins-hassle-section,
+    .fs-section,
     .coverage-section,
     .step-cards,
     .shop-section,
@@ -5326,6 +5532,7 @@ input, select, textarea, button {
     .faq-section,
     .ins-form-section,
     .ins-hassle-section,
+    .fs-section,
     .coverage-section,
     .step-cards,
     .shop-section,
