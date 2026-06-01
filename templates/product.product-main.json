@@ -97,9 +97,9 @@
       ],
       "name": "Step Cards",
       "settings": {
-        "eyebrow": "Simple",
-        "heading": "Four steps to coverage",
-        "description": "We handle the paperwork so you don't have to.",
+        "eyebrow": "Browse",
+        "heading": "Maternity Products You Need, Covered by Insurance, Delivered to Your Door",
+        "description": "Maternity Products You Need, \nCovered by Insurance, \nDelivered to Your Door",
         "show_eyebrow": true,
         "show_heading": true,
         "show_description": true,
