@@ -89,15 +89,22 @@
                 assign half = block.settings.half_width
               -%}
 
-              <div class="ins-hassle-card{% if half %} ins-hassle-card--half{% endif %}" data-reveal data-reveal-delay="{{ d }}" {{ block.shopify_attributes }}>
-                {%- if block.settings.show_label and block.settings.label != blank -%}
+              {%- assign show_label = block.settings.show_label -%}
+              {%- if section.settings.show_field_labels == false -%}{%- assign show_label = false -%}{%- endif -%}
+              {%- assign show_number = block.settings.show_number -%}
+              {%- if section.settings.show_field_numbers == false -%}{%- assign show_number = false -%}{%- endif -%}
+
+              <div class="ins-hassle-card{% if half %} ins-hassle-card--half{% endif %}{% unless show_label %} ins-hassle-card--no-label{% endunless %}" data-reveal data-reveal-delay="{{ d }}" {{ block.shopify_attributes }}>
+                {%- if show_label and block.settings.label != blank -%}
                   <label class="ins-hassle-card-label" for="{{ field_id }}">
-                    {%- if block.settings.show_number -%}
+                    {%- if show_number -%}
                       <span class="ins-hassle-card-num">{{ idx }}.</span>
                     {%- endif -%}
                     <span class="ins-hassle-card-text">{{ block.settings.label }}</span>
                     {%- if req -%}<span class="ins-hassle-card-req" aria-hidden="true">*</span>{%- endif -%}
                   </label>
+                {%- else -%}
+                  <label class="visually-hidden" for="{{ field_id }}">{{ block.settings.label }}</label>
                 {%- endif -%}
 
                 {%- case type -%}
@@ -239,6 +246,8 @@
     { "type": "checkbox", "id": "show_description", "label": "Show description", "default": true },
     { "type": "checkbox", "id": "show_eyebrow", "label": "Show eyebrow", "default": true },
     { "type": "checkbox", "id": "show_footnote", "label": "Show footnote", "default": true },
+    { "type": "checkbox", "id": "show_field_labels", "label": "Show field labels (all cards)", "default": false, "info": "Turn off to match the placeholder-only style. Per-card 'Show card label' settings still apply." },
+    { "type": "checkbox", "id": "show_field_numbers", "label": "Show step numbers (all cards)", "default": false, "info": "Per-card 'Show step number' settings still apply when this is on." },
 
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 112 },

@@ -317,6 +317,8 @@
         "show_description": true,
         "show_eyebrow": true,
         "show_footnote": true,
+        "show_field_labels": false,
+        "show_field_numbers": false,
         "padding_top": 112,
         "padding_bottom": 112,
         "padding_x": 64,
