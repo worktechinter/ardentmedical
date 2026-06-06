@@ -17,6 +17,7 @@
             "type": "logo_override",
             "settings": {
               "template_suffix": "maternity",
+              "logo": "shopify://shop_images/compressed_Ardent_Maternity_Logo.png",
               "logo_text": ""
             }
           },
@@ -169,7 +170,7 @@
           "footer-1"
         ],
         "settings": {
-          "logo": "shopify://shop_images/Ardent_Medical_Supply_logo.png",
+          "logo": "shopify://shop_images/compressed_Ardent_Maternity_Logo.png",
           "logo_text": "Logo",
           "address": "<p><strong>Brooklyn</strong><br/>Ardent Maternity, Brooklyn, New York</p>",
           "phone": "+1 (844) 934-0452",
