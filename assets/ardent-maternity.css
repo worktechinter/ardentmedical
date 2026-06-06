@@ -4774,15 +4774,15 @@ a.lg-item:hover { opacity: 0.65; }
 
 .ins-badge-img {
     display: block;
-    width: 72px;
-    height: 72px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 }
 
 .ins-badge--sm .ins-badge-img {
-    width: 56px;
-    height: 56px;
+    width: 34px;
+    height: 34px;
 }
 
 /* Ensure PDP gallery + collection card image wrappers are positioned for the overlay */
@@ -4792,8 +4792,8 @@ a.lg-item:hover { opacity: 0.65; }
 
 @media (max-width: 640px) {
     .ins-badge { top: 8px; left: 8px; }
-    .ins-badge-img { width: 56px; height: 56px; }
-    .ins-badge--sm .ins-badge-img { width: 44px; height: 44px; }
+    .ins-badge-img { width: 36px; height: 36px; }
+    .ins-badge--sm .ins-badge-img { width: 28px; height: 28px; }
 }
 
 .pdp-title {
