@@ -4776,6 +4776,7 @@ a.lg-item:hover { opacity: 0.65; }
     text-transform: uppercase;
     box-shadow: 0 1px 2px rgba(225, 78, 107, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: fit-content;
 }
 
 .pdp-insurance-badge:hover {
