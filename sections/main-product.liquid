@@ -94,10 +94,31 @@
           {%- endif -%}
 
           {%- if section.settings.show_insurance_badge and product.metafields.custom.insurance_badge != blank -%}
-            {%- assign insurance_icon = product.metafields.custom.insurance_badge.value | default: product.metafields.custom.insurance_badge -%}
-            <div class="pdp-insurance-badge" data-reveal data-reveal-delay="60">
-              {{ insurance_icon | image_url: width: 320 | image_tag: alt: section.settings.insurance_badge_label | default: 'HSA/FSA Eligible', loading: 'lazy', class: 'pdp-insurance-badge-img' }}
-            </div>
+            {%- liquid
+              assign insurance_mf = product.metafields.custom.insurance_badge
+              assign badge_img_src = ''
+              assign badge_alt = section.settings.insurance_badge_label | default: 'HSA/FSA Eligible'
+
+              if insurance_mf.value.image != blank
+                assign badge_img_src = insurance_mf.value.image | image_url: width: 320
+              elsif insurance_mf.value.src != blank
+                assign badge_img_src = insurance_mf.value | image_url: width: 320
+              elsif insurance_mf.value.url != blank
+                assign badge_img_src = insurance_mf.value.url
+              elsif insurance_mf.value.preview_image != blank
+                assign badge_img_src = insurance_mf.value.preview_image | image_url: width: 320
+              else
+                assign mf_string = insurance_mf | append: ''
+                if mf_string contains '://'
+                  assign badge_img_src = mf_string
+                endif
+              endif
+            -%}
+            {%- if badge_img_src != blank -%}
+              <div class="pdp-insurance-badge" data-reveal data-reveal-delay="60">
+                <img src="{{ badge_img_src }}" alt="{{ badge_alt | escape }}" loading="lazy" class="pdp-insurance-badge-img">
+              </div>
+            {%- endif -%}
           {%- endif -%}
 
           <h1 class="pdp-title" data-reveal data-reveal-delay="80">{{ product.title }}</h1>
