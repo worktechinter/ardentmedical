@@ -200,7 +200,9 @@
         "testimonial_Qty4QE": {
           "type": "testimonial",
           "settings": {
-            "quote": "This pump made going back to work possible.",
+            "logo": "shopify://shop_images/AMEDA_LOGO.png",
+            "quote": "This pump made going back to work possible. It's quiet, reliable, and I didn't have to fight with insurance to get it.",
+            "avatar": "shopify://shop_images/M6_Scene_1.jpg",
             "author_name": "Sarah Mitchell",
             "author_role": "Mother of two",
             "link_text": "Read her story",
@@ -518,7 +520,6 @@
       "settings": {
         "heading": "Questions",
         "subheading": "Find answers about your coverage and what happens next.",
-        "use_product_faqs": true,
         "faqs_metafield_namespace": "custom",
         "faqs_metafield_key": "frequently_asked_questions",
         "first_open_dynamic": true,
