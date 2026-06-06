@@ -224,7 +224,9 @@
         "testimonial_YGhmmb": {
           "type": "testimonial",
           "settings": {
-            "quote": "",
+            "logo": "shopify://shop_images/Copy_of_babybudda_logo.png",
+            "quote": "The quality is there and the price is right. No hassle, no confusion, just what I needed when I needed it.",
+            "avatar": "shopify://shop_images/M6_Scene_23.jpg",
             "author_name": "Maria Rodriguez",
             "author_role": "Breastfeeding mother",
             "link_text": "Read her story",
