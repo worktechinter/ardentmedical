@@ -13,6 +13,13 @@
       "header": {
         "type": "header",
         "blocks": {
+          "logo_override_iFVgYD": {
+            "type": "logo_override",
+            "settings": {
+              "template_suffix": "maternity",
+              "logo_text": ""
+            }
+          },
           "header-0": {
             "type": "nav_link",
             "settings": {
@@ -95,13 +102,14 @@
           }
         },
         "block_order": [
+          "logo_override_iFVgYD",
           "header-0",
           "header-1",
           "header-2",
           "header-3"
         ],
         "settings": {
-          "logo": "shopify://shop_images/web-logo.webp",
+          "logo": "shopify://shop_images/Ardent_Medical_Supply_logo.png",
           "logo_text": "Logo",
           "show_phone": true,
           "phone_label": "Talk To Our Team",
@@ -161,7 +169,7 @@
           "footer-1"
         ],
         "settings": {
-          "logo": "shopify://shop_images/web-logo.webp",
+          "logo": "shopify://shop_images/Ardent_Medical_Supply_logo.png",
           "logo_text": "Logo",
           "address": "<p><strong>Brooklyn</strong><br/>Ardent Maternity, Brooklyn, New York</p>",
           "phone": "+1 (844) 934-0452",
