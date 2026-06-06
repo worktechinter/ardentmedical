@@ -4759,28 +4759,47 @@ a.lg-item:hover { opacity: 0.65; }
 .pdp-crumb-sep svg { width: 100%; height: 100%; display: block; }
 
 .pdp-insurance-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     margin: 0 0 16px;
-    line-height: 0;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.pdp-insurance-badge-img {
-    display: block;
-    width: auto;
-    height: 44px;
-    max-width: 100%;
-    object-fit: contain;
-    /* Tints the black logo to brand pink (#e14e6b) */
-    filter: brightness(0) saturate(100%) invert(45%) sepia(67%) saturate(2950%) hue-rotate(320deg) brightness(95%) contrast(92%);
+    padding: 8px 16px 8px 8px;
+    background: #fff4f6;
+    border: 1px solid #f6d1d9;
+    border-radius: 999px;
+    color: #e14e6b;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px rgba(225, 78, 107, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .pdp-insurance-badge:hover {
     transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(225, 78, 107, 0.16);
+}
+
+.pdp-insurance-badge-img {
+    display: block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    flex-shrink: 0;
+    /* Tints a black icon to brand pink (#e14e6b). Skip with `--no-tint` if a colored icon is uploaded. */
+    filter: brightness(0) saturate(100%) invert(45%) sepia(67%) saturate(2950%) hue-rotate(320deg) brightness(95%) contrast(92%);
+}
+
+.pdp-insurance-badge-text {
+    white-space: nowrap;
 }
 
 @media (max-width: 640px) {
-    .pdp-insurance-badge-img { height: 36px; }
+    .pdp-insurance-badge { font-size: 12px; padding: 6px 14px 6px 6px; gap: 8px; }
+    .pdp-insurance-badge-img { width: 22px; height: 22px; }
 }
 
 .pdp-title {

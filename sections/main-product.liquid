@@ -94,31 +94,13 @@
           {%- endif -%}
 
           {%- if section.settings.show_insurance_badge and product.metafields.custom.insurance_badge != blank -%}
-            {%- liquid
-              assign insurance_mf = product.metafields.custom.insurance_badge
-              assign badge_img_src = ''
-              assign badge_alt = section.settings.insurance_badge_label | default: 'HSA/FSA Eligible'
-
-              if insurance_mf.value.image != blank
-                assign badge_img_src = insurance_mf.value.image | image_url: width: 320
-              elsif insurance_mf.value.src != blank
-                assign badge_img_src = insurance_mf.value | image_url: width: 320
-              elsif insurance_mf.value.url != blank
-                assign badge_img_src = insurance_mf.value.url
-              elsif insurance_mf.value.preview_image != blank
-                assign badge_img_src = insurance_mf.value.preview_image | image_url: width: 320
-              else
-                assign mf_string = insurance_mf | append: ''
-                if mf_string contains '://'
-                  assign badge_img_src = mf_string
-                endif
-              endif
-            -%}
-            {%- if badge_img_src != blank -%}
-              <div class="pdp-insurance-badge" data-reveal data-reveal-delay="60">
-                <img src="{{ badge_img_src }}" alt="{{ badge_alt | escape }}" loading="lazy" class="pdp-insurance-badge-img">
-              </div>
-            {%- endif -%}
+            {%- assign badge_text = product.metafields.custom.insurance_badge -%}
+            <div class="pdp-insurance-badge" data-reveal data-reveal-delay="60">
+              {%- if section.settings.insurance_badge_icon != blank -%}
+                {{ section.settings.insurance_badge_icon | image_url: width: 96 | image_tag: alt: '', loading: 'lazy', class: 'pdp-insurance-badge-img' }}
+              {%- endif -%}
+              <span class="pdp-insurance-badge-text">{{ badge_text }}</span>
+            </div>
           {%- endif -%}
 
           <h1 class="pdp-title" data-reveal data-reveal-delay="80">{{ product.title }}</h1>
@@ -588,8 +570,8 @@
     { "type": "text", "id": "rating_count_word", "label": "Review count label", "default": "reviews" },
 
     { "type": "header", "content": "Insurance Badge" },
-    { "type": "checkbox", "id": "show_insurance_badge", "label": "Show insurance badge", "default": true, "info": "Reads the badge image from product metafield custom.insurance_badge (image type). Tinted pink via CSS." },
-    { "type": "text", "id": "insurance_badge_label", "label": "Badge alt text (accessibility)", "default": "HSA/FSA Eligible" },
+    { "type": "checkbox", "id": "show_insurance_badge", "label": "Show insurance badge", "default": true, "info": "Badge appears when product metafield custom.insurance_badge (text) is filled. Uses the icon below." },
+    { "type": "image_picker", "id": "insurance_badge_icon", "label": "Badge icon", "info": "Uploaded once; shown next to the metafield text on every product." },
 
     { "type": "header", "content": "Short description" },
     { "type": "checkbox", "id": "show_subdescription", "label": "Show short description", "default": true, "info": "Uses the product's full description. Falls back to the text below only when the product has no description." },
