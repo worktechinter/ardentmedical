@@ -43,8 +43,8 @@
       "type": "cta-strip",
       "name": "CTA Strip",
       "settings": {
-        "heading": "<p>Less insurance stress. More baby time.</p>",
-        "description": "<p>Our team simplifies the insurance process, so you know exactly what you're covered for and more.</p>",
+        "heading": "<p>Most people don't know what their insurance actually covers</p>",
+        "description": "<p><strong>And finding out means phone calls that go nowhere, paperwork that makes no sense, and vendors who lose your order. Whether you're a patient trying to get a prescribed brace or a new mom navigating maternity benefits for the first time, the system wasn't built to make this easy.<br/>That's exactly what Ardent is here to fix.</strong></p>",
         "show_heading": true,
         "show_description": true,
         "padding_top": 112,
