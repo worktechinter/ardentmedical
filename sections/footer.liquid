@@ -8,13 +8,28 @@
 
     <div class="footer-content">
 
-      {%- comment -%} Brand column {%- endcomment -%}
+      {%- comment -%} Brand column — supports per-template logo override via "logo_override" blocks {%- endcomment -%}
+      {%- assign active_logo = section.settings.logo -%}
+      {%- assign active_logo_text = section.settings.logo_text -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'logo_override' and block.settings.template_suffix != blank -%}
+          {%- if block.settings.template_suffix == template.suffix -%}
+            {%- if block.settings.logo != blank -%}
+              {%- assign active_logo = block.settings.logo -%}
+            {%- endif -%}
+            {%- if block.settings.logo_text != blank -%}
+              {%- assign active_logo_text = block.settings.logo_text -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+
       <div class="footer-brand">
         <div class="footer-logo">
-          {%- if section.settings.logo != blank -%}
-            {{ section.settings.logo | image_url: width: 300 | image_tag: alt: shop.name, loading: 'lazy', class: 'footer-logo-img' }}
+          {%- if active_logo != blank -%}
+            {{ active_logo | image_url: width: 300 | image_tag: alt: shop.name, loading: 'lazy', class: 'footer-logo-img' }}
           {%- else -%}
-            <span class="footer-logo-text">{{ section.settings.logo_text | default: 'Logo' }}</span>
+            <span class="footer-logo-text">{{ active_logo_text | default: 'Logo' }}</span>
           {%- endif -%}
         </div>
 
@@ -152,6 +167,16 @@
     { "type": "url", "id": "legal_3_link", "label": "Legal link 3 URL" }
   ],
   "blocks": [
+    {
+      "type": "logo_override",
+      "name": "Logo Override (per template)",
+      "settings": [
+        { "type": "paragraph", "content": "Use this block to swap the footer logo on a specific template. Enter the template suffix (e.g. for page.maternity.json, enter \"maternity\")." },
+        { "type": "text", "id": "template_suffix", "label": "Template suffix", "info": "Match the template suffix exactly. Example: maternity" },
+        { "type": "image_picker", "id": "logo", "label": "Logo image" },
+        { "type": "text", "id": "logo_text", "label": "Logo text (fallback)" }
+      ]
+    },
     {
       "type": "link_column",
       "name": "Link Column",
