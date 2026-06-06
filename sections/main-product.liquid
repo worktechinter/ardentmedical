@@ -336,7 +336,14 @@
                     endif
 
                     if use_pairs == false and mf != blank
-                      assign body_html = mf
+                      assign mf_type = mf.type | default: ''
+                      if mf_type contains 'rich_text'
+                        capture body_html
+                          echo mf | metafield_tag
+                        endcapture
+                      else
+                        assign body_html = mf
+                      endif
                     endif
                   endif
                 -%}
