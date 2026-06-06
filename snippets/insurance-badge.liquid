@@ -1,0 +1,22 @@
+{% comment %}
+  Snippet: insurance-badge
+  Renders the pink insurance badge as an absolute overlay on a product image.
+
+  Required:
+    product:    a product object
+
+  Optional:
+    icon:       image object (theme setting); falls back to settings.insurance_badge_icon if available
+    size:       "sm" for compact (collection cards), default is regular (PDP)
+{% endcomment %}
+
+{%- if product.metafields.custom.insurance_badge != blank -%}
+  {%- assign badge_text = product.metafields.custom.insurance_badge -%}
+  {%- assign badge_icon = icon | default: settings.insurance_badge_icon -%}
+  <div class="ins-badge ins-badge--{{ size | default: 'md' }}">
+    {%- if badge_icon != blank -%}
+      {{ badge_icon | image_url: width: 96 | image_tag: alt: '', loading: 'lazy', class: 'ins-badge-img' }}
+    {%- endif -%}
+    <span class="ins-badge-text">{{ badge_text }}</span>
+  </div>
+{%- endif -%}

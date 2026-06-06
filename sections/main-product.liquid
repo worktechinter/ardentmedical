@@ -93,16 +93,6 @@
             </nav>
           {%- endif -%}
 
-          {%- if section.settings.show_insurance_badge and product.metafields.custom.insurance_badge != blank -%}
-            {%- assign badge_text = product.metafields.custom.insurance_badge -%}
-            <div class="pdp-insurance-badge" data-reveal data-reveal-delay="60">
-              {%- if section.settings.insurance_badge_icon != blank -%}
-                {{ section.settings.insurance_badge_icon | image_url: width: 96 | image_tag: alt: '', loading: 'lazy', class: 'pdp-insurance-badge-img' }}
-              {%- endif -%}
-              <span class="pdp-insurance-badge-text">{{ badge_text }}</span>
-            </div>
-          {%- endif -%}
-
           <h1 class="pdp-title" data-reveal data-reveal-delay="80">{{ product.title }}</h1>
 
           <div class="pdp-price-row" data-reveal data-reveal-delay="120">
@@ -392,6 +382,9 @@
               {{ 'product-1' | placeholder_svg_tag: 'pdp-gallery-main-image' }}
             </div>
           {%- endif -%}
+          {%- if section.settings.show_insurance_badge -%}
+            {%- render 'insurance-badge', product: product, size: 'md' -%}
+          {%- endif -%}
         </div>
 
         {%- if product.images.size > 1 -%}
@@ -570,8 +563,7 @@
     { "type": "text", "id": "rating_count_word", "label": "Review count label", "default": "reviews" },
 
     { "type": "header", "content": "Insurance Badge" },
-    { "type": "checkbox", "id": "show_insurance_badge", "label": "Show insurance badge", "default": true, "info": "Badge appears when product metafield custom.insurance_badge (text) is filled. Uses the icon below." },
-    { "type": "image_picker", "id": "insurance_badge_icon", "label": "Badge icon", "info": "Uploaded once; shown next to the metafield text on every product." },
+    { "type": "checkbox", "id": "show_insurance_badge", "label": "Show insurance badge", "default": true, "info": "Overlays the product image when metafield custom.insurance_badge is filled. Upload the global icon under Theme Settings → Insurance Badge." },
 
     { "type": "header", "content": "Short description" },
     { "type": "checkbox", "id": "show_subdescription", "label": "Show short description", "default": true, "info": "Uses the product's full description. Falls back to the text below only when the product has no description." },

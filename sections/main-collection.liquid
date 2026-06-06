@@ -15,9 +15,12 @@
       <div class="collection-grid">
         {%- for product in collection.products -%}
           <a href="{{ product.url }}" class="collection-card">
-            {%- if product.featured_image != blank -%}
-              {{ product.featured_image | image_url: width: 800 | image_tag: alt: product.title, loading: 'lazy' }}
-            {%- endif -%}
+            <div class="collection-card-media">
+              {%- if product.featured_image != blank -%}
+                {{ product.featured_image | image_url: width: 800 | image_tag: alt: product.title, loading: 'lazy', class: 'collection-card-image' }}
+              {%- endif -%}
+              {%- render 'insurance-badge', product: product, size: 'sm' -%}
+            </div>
             <h3>{{ product.title }}</h3>
             <p class="collection-card-price">{{ product.price | money }}</p>
           </a>

@@ -16,5 +16,19 @@
         "label": "Favicon"
       }
     ]
+  },
+  {
+    "name": "Insurance Badge",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Badge appears on a product (PDP gallery + collection cards) when the product's text metafield custom.insurance_badge is filled. Upload the icon once below."
+      },
+      {
+        "type": "image_picker",
+        "id": "insurance_badge_icon",
+        "label": "Badge icon (global)"
+      }
+    ]
   }
 ]
