@@ -4790,7 +4790,7 @@ a.lg-item:hover { opacity: 0.65; }
     object-fit: contain;
     flex-shrink: 0;
     /* Tints a black icon to brand pink (#e14e6b). Skip with `--no-tint` if a colored icon is uploaded. */
-    filter: brightness(0) saturate(100%) invert(45%) sepia(67%) saturate(2950%) hue-rotate(320deg) brightness(95%) contrast(92%);
+    /* filter: brightness(0) saturate(100%) invert(45%) sepia(67%) saturate(2950%) hue-rotate(320deg) brightness(95%) contrast(92%); */
 }
 
 .pdp-insurance-badge-text {
