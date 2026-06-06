@@ -138,12 +138,10 @@
 
           {%- if section.settings.show_subdescription -%}
             <div class="pdp-subdescription" data-reveal data-reveal-delay="160">
-              {%- if product.metafields.custom.short_description != blank -%}
-                {{ product.metafields.custom.short_description }}
+              {%- if product.description != blank -%}
+                {{ product.description }}
               {%- elsif section.settings.subdescription != blank -%}
                 {{ section.settings.subdescription }}
-              {%- else -%}
-                {{ product.description | strip_html | truncatewords: 28 }}
               {%- endif -%}
             </div>
           {%- endif -%}
@@ -562,7 +560,7 @@
     { "type": "text", "id": "rating_count_word", "label": "Review count label", "default": "reviews" },
 
     { "type": "header", "content": "Short description" },
-    { "type": "checkbox", "id": "show_subdescription", "label": "Show short description", "default": true, "info": "Reads from product metafield custom.short_description if present, otherwise the fallback below, otherwise a truncated product description." },
+    { "type": "checkbox", "id": "show_subdescription", "label": "Show short description", "default": true, "info": "Uses the product's full description. Falls back to the text below only when the product has no description." },
     { "type": "textarea", "id": "subdescription", "label": "Fallback short description", "default": "Covered by most insurance plans. Quiet, efficient, and built to last through every stage of your journey." },
 
     { "type": "header", "content": "Form" },
