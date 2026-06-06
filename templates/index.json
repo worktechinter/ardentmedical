@@ -143,9 +143,9 @@
       "settings": {
         "style": "experts",
         "image_position": "left",
-        "eyebrow": "",
-        "heading": "",
-        "description": "",
+        "eyebrow": "General Medical Supplies",
+        "heading": "<p>Full-Service Medical Supply In Store and Online</p>",
+        "description": "Prescribed a brace? Need compression therapy? We've got you covered. Ardent provides a full range of insurance-covered durable medical equipment beyond maternity products. From orthopedic bracing to compression therapy, our team verifies your benefits, handles prior authorizations, and gets your supplies to you fast,  in store or delivered to your door.",
         "show_image": true,
         "show_eyebrow": true,
         "show_heading": true,
