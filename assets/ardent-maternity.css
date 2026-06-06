@@ -3757,7 +3757,7 @@ a.lg-item:hover { opacity: 0.65; }
 }
 
 .footer-logo {
-    height: 36px;
+    height: auto;
     display: flex;
     align-items: center;
 }
