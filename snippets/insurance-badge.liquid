@@ -11,12 +11,10 @@
 {% endcomment %}
 
 {%- if product.metafields.custom.insurance_badge != blank -%}
-  {%- assign badge_text = product.metafields.custom.insurance_badge -%}
   {%- assign badge_icon = icon | default: settings.insurance_badge_icon -%}
-  <div class="ins-badge ins-badge--{{ size | default: 'md' }}">
-    {%- if badge_icon != blank -%}
-      {{ badge_icon | image_url: width: 96 | image_tag: alt: '', loading: 'lazy', class: 'ins-badge-img' }}
-    {%- endif -%}
-    <span class="ins-badge-text">{{ badge_text }}</span>
-  </div>
+  {%- if badge_icon != blank -%}
+    <div class="ins-badge ins-badge--{{ size | default: 'md' }}" aria-label="{{ product.metafields.custom.insurance_badge | escape }}">
+      {{ badge_icon | image_url: width: 240 | image_tag: alt: product.metafields.custom.insurance_badge, loading: 'lazy', class: 'ins-badge-img' }}
+    </div>
+  {%- endif -%}
 {%- endif -%}
