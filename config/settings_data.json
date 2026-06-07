@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "insurance_badge_icon": "shopify://shop_images/hsa-fsa-badge-seal.svg",
+    "insurance_badge_icon": "shopify://shop_images/badge-logo.png",
     "sections": {
       "header": {
         "type": "header",
